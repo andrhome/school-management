@@ -1,0 +1,1 @@
+const User: {[key: string]: any} = new Function();
