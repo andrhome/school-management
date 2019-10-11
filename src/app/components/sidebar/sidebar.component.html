@@ -1,0 +1,61 @@
+<div class="sidebar-wrap">
+  <h5 class="sidebar-title">Дневник <br> Наблюдений</h5>
+  <ul class="default-list default-list--block">
+    <li>
+      <a [routerLink]="'/observation/notes'"
+         [routerLinkActive]="'active'"
+         [queryParams]="{page: 'notes'}"
+         queryParamsHandling="merge"
+         class="default-list__link">Заметки</a>
+    </li>
+    <li>
+      <a href="" class="default-list__link default-list__link--disabled">Посещаемость</a>
+    </li>
+    <li>
+      <a [routerLink]="'/observation/training-topics'"
+         [routerLinkActive]="'active'"
+         [queryParams]="{page: 'trainingTopics'}"
+         queryParamsHandling="merge"
+         class="default-list__link">Темы занятий</a>
+    </li>
+    <li>
+      <a
+        [routerLink]="'/observation/materials'"
+        [routerLinkActive]="'active'"
+        [queryParams]="{page: 'materials'}"
+        queryParamsHandling="merge"
+        class="default-list__link">Материалы</a>
+    </li>
+    <li>
+      <a *ngIf="!groupView"
+         [routerLink]="'/observation/projects'"
+         [routerLinkActive]="'active'"
+         [queryParams]="{page: 'projects'}"
+         queryParamsHandling="merge"
+         class="default-list__link default-list__link--block">Проекты</a>
+    </li>
+    <li>
+      <a *ngIf="!groupView"
+         [routerLink]="'/observation/kis'"
+         [routerLinkActive]="'active'"
+         [queryParams]="{page: 'kis'}"
+         queryParamsHandling="merge"
+         class="default-list__link">КИС</a>
+    </li>
+    <li>
+      <a *ngIf="!groupView"
+         [routerLink]="'/observation/work-characteristic'"
+         [routerLinkActive]="'active'"
+         [queryParams]="{page: 'work-characteristic'}"
+         queryParamsHandling="merge"
+         class="default-list__link">Характеристика работы</a>
+    </li>
+    <li>
+      <a href="" class="default-list__link">
+        <span>Печать</span>
+        <svg-icon class="ml-3" src="assets/images/svg/icons/print.svg"
+                  [svgStyle]="{'width.rem': 1.6, 'height.rem': 1.6, 'color': '#A4A9A8'}"></svg-icon>
+      </a>
+    </li>
+  </ul>
+</div>

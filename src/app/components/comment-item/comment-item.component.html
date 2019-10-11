@@ -1,0 +1,19 @@
+<mts-user-row *ngIf="comment.createdBy"
+              class="mb-3"
+              [user]="comment.createdBy"></mts-user-row>
+<p class="comment__text">
+  {{ comment.text }}
+</p>
+<div class="control-block comment__controls">
+  <time class="control-block__text">{{ comment.createdAt | date: 'dd.MM.yyyy' }}</time>
+  <ng-container *ngIf="canEdit">
+    <span>&bull;</span>
+    <button mat-button class="control-block__edit btn-link" title="Редактировать" (click)="editComment(comment)"
+            [disabled]="false">редактировать
+    </button>
+    <span>&bull;</span>
+    <button mat-button class="control-block__delete btn-link" title="Удалить" (click)="delComment(comment)"
+            [disabled]="false">удалить
+    </button>
+  </ng-container>
+</div>

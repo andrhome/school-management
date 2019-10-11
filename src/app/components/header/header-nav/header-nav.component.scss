@@ -1,0 +1,121 @@
+@import "variables";
+@import "mixin";
+
+:host {
+  height: 100%;
+}
+
+.header-nav-holder {
+  @include flex-box(row, space-between, center);
+  height: 100%;
+  position: relative;
+  z-index: 100;
+
+  &.show-nav {
+    .header-nav {
+      transform: translateX(0);
+    }
+
+    .header-nav-overlay {
+      display: block;
+    }
+  }
+}
+
+.header-nav-mobile-toggle {
+  display: none;
+  width: 5.3rem;
+  border-radius: $small-radius;
+  cursor: pointer;
+  padding: .8rem 1rem;
+  &:hover {
+    background: $hover-color;
+  }
+  @include media-max-screen($tablet) {
+    display: block;
+  }
+
+  .line {
+    width: 100%;
+    height: 3px;
+    display: block;
+    background: $text-color;
+    border-radius: 30px;
+    margin: 4px 0;
+  }
+}
+
+.header-nav {
+  @include flex-box(row, space-between, center);
+  height: 100%;
+  font-size: 1.6rem;
+  @include media-max-screen($desktop) {
+    font-size: 1.4rem;
+  }
+  @include media-max-screen($tablet) {
+    @include transition;
+    height: calc(100% - #{$header-height});
+    width: 240px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    background: rgba($black-color, .7);
+    padding-top: 1.5rem;
+    transform: translateX(240px);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+  }
+
+  &__link-holder {
+    height: 100%;
+    @include media-max-screen($tablet) {
+      height: auto;
+      width: 100%;
+      color: $white-color;
+    }
+  }
+
+  &__link {
+    @include flex-box(row, space-between, center);
+    width: 100%;
+    height: 100%;
+    font-size: 1.6rem;
+    border-radius: 0;
+    padding: 0 2rem;
+    cursor: pointer;
+
+    &:hover {
+      background: $hover-color;
+    }
+    @include media-max-screen($desktop) {
+      padding: 1.35rem 2rem;
+    }
+    @include media-max-screen($tablet) {
+      justify-content: flex-end;
+      color: $white-color;
+      &:hover {
+        background: transparent;
+      }
+      &:active {
+        color: $text-color;
+        background: $hover-color;
+      }
+    }
+  }
+}
+
+.header-nav-overlay {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: rgba($black-color, .7);
+  position: fixed;
+  top: $header-height;
+  left: 0;
+
+  @include media-min-screen($tablet + 1) {
+    display: none !important;
+  }
+}

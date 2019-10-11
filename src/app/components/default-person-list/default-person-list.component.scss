@@ -1,0 +1,13 @@
+@import "src/scss/mixin";
+
+.pupils-buttons {
+  @include flex-box(row, space-between, center);
+  margin: 2rem 0;
+
+  .btn {
+    @include flex-box(row, center, center);
+    width: 47%;
+    font-size: 1.4rem;
+    padding: .6rem 1.2rem .5rem;
+  }
+}

@@ -1,0 +1,26 @@
+<div>
+  <mts-content-block-header [hideLegend]="true"></mts-content-block-header>
+  <div class="inner-block">
+    <div class="inner-block__content">
+      <div class="mb-3">
+        <div *ngFor="let quantity of projectQuantity; let i = index" class="projects-status">
+          <span class="status">Завершен</span>
+          <div class="projects-line"
+               [ngClass]="{'finished': i === 0, 'not-active': i === 1,'active': i === 2}"
+               [ngStyle]="{'width': ((i + 1) * 150) + 'px'}">
+            <span>3 проекта</span>
+          </div>
+        </div>
+      </div>
+      <div class="projects-info">
+        <div class="project" *ngFor="let quantity of projectList; let i = index">
+          <h5 class="project-name">Проектная работа «Моя семья»</h5>
+          <div class="project-footer">
+            <span class="project-footer-status">Завершен</span>
+            <em class="project-footer-pupils">3 ученик</em>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

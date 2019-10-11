@@ -1,0 +1,8 @@
+<div class="form-group">
+  <div class="form-label">Дни повторения</div>
+  <div class="week-days-checkboxes">
+    <mat-checkbox *ngFor="let day of days"
+                  [(ngModel)]="day.checked"
+                  (change)="getDays()">{{ day.label }}</mat-checkbox>
+  </div>
+</div>

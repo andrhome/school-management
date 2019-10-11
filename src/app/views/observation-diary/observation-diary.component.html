@@ -1,0 +1,14 @@
+<div class="main-content">
+  <div class="sidebar-holder">
+    <mts-sidebar [groupView]="groupView"></mts-sidebar>
+  </div>
+  <div class="content-holder">
+    <mts-content-filter [groupView]="groupView"></mts-content-filter>
+    <div class="content-block">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <div class="pt-4">
+    <mts-pupils-nav *ngIf="!groupView"></mts-pupils-nav>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+@import "variables";
+@import "mixin";
+
+.user-block {
+  @include flex-box(row, flex-end, center);
+  width: 26rem;
+  font-size: 1.4rem;
+  padding: 1rem 0 1rem 1rem;
+  @include media-max-screen($desktop) {
+    width: 22rem;
+  }
+  @include media-max-screen($tablet-2) {
+    padding-right: 1.5rem;
+  }
+
+  &__btn {
+    @include flex-box(row, flex-end, center);
+    cursor: pointer;
+    padding: .5rem;
+    &:hover {
+      .user-block__name {
+        color: $text-color;
+      }
+    }
+  }
+
+  &__name {
+    color: $text-color-3;
+  }
+
+  &__photo {
+    width: 36px;
+    height: 36px;
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-left: 1.5rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

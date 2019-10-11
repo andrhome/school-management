@@ -1,0 +1,8 @@
+<div class="full-height-block container" *ngIf="currentTeacher">
+  <mts-add-form-nav [title]="'К списку учеников'" [link]="'/instruments/list/' + pluralItemsType.TEACHERS"></mts-add-form-nav>
+  <mts-person-details-page [person]="currentTeacher" [editUrl]="unitItemType.TEACHER"></mts-person-details-page>
+  <div class="loading-spinner" *ngIf="isLoading">
+    <mat-spinner></mat-spinner>
+    <div class="loading-spinner-overlay"></div>
+  </div>
+</div>

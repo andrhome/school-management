@@ -1,0 +1,15 @@
+<div class="data-calendar">
+  <div class="date-start">
+    <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="pickerStart" placeholder="Дата начала"
+      [value]="dateStart" (dateChange)="handleDateStart($event)" disabled>
+    <mat-datepicker #pickerStart disabled="false"></mat-datepicker>
+    <span mat-raised-button class="open-button" (click)="pickerStart.open()"></span>
+  </div>
+  <span class="dash">-</span>
+  <div class="date-end">
+    <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="pickerEnd" placeholder="Дата нонца"
+      [value]="dateEnd" (dateChange)="handleDateEnd($event)" disabled>
+    <mat-datepicker #pickerEnd disabled="false"></mat-datepicker>
+    <span mat-raised-button class="open-button" (click)="pickerEnd.open()"></span>
+  </div>
+</div>

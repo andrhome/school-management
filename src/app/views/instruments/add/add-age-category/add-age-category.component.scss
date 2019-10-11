@@ -1,0 +1,5 @@
+@import "extends";
+
+:host {
+  @extend .flex-qrow-set;
+}

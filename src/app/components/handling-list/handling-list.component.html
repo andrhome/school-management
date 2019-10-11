@@ -1,0 +1,15 @@
+<ul class="handling-list">
+  <li *ngFor="let subject of subjects">
+    <button class="handling-list__button" [ngClass]="{'active': activeSubject === subject.id}" (click)="setActiveSubject(subject.id)">
+      <span>{{ subject.title }}</span>
+      <span class="badges-list">
+        <span *ngIf="subject.presented > 0" class="colored-badge colored-badge--rounded colored-badge--wait">
+          <span class="colored-badge__text">{{ subject.presented }}</span>
+        </span>
+        <span *ngIf="subject.inProgress > 0" class="colored-badge colored-badge--rounded colored-badge--progress">
+          <span class="colored-badge__text">{{ subject.inProgress }}</span>
+        </span>
+      </span>
+    </button>
+  </li>
+</ul>

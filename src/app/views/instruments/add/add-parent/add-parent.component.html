@@ -1,0 +1,69 @@
+<div class="add-form-holder container">
+  <mts-add-form-nav [title]="'К списку родителей'" [link]="'/instruments/list/' + pluralItemsType.PARENTS"></mts-add-form-nav>
+  <div class="card">
+    <div class="card-heading">
+      <h4 class="card-title">Добавить родителя</h4>
+    </div>
+    <div class="card-body">
+      <form class="add-form">
+        <label class="form-group">
+          <span class="form-label">Email <small class="require-flag">*</small></span>
+          <input type="email" class="form-control">
+        </label>
+        <label class="form-group">
+          <span class="form-label">Пароль <small class="require-flag">*</small></span>
+          <input type="password" class="form-control">
+        </label>
+        <label class="form-group">
+          <span class="form-label">Фамилия <small class="require-flag">*</small></span>
+          <input type="text" class="form-control">
+        </label>
+        <label class="form-group">
+          <span class="form-label">Имя <small class="require-flag">*</small></span>
+          <input type="text" class="form-control">
+        </label>
+        <label class="form-group">
+          <span class="form-label">Отчество <small class="require-flag">*</small></span>
+          <input type="text" class="form-control">
+        </label>
+        <label class="form-group">
+          <span class="form-label">Пол <small class="require-flag">*</small></span>
+          <select class="form-control">
+            <option value="male">Мужской</option>
+            <option value="female">Женский</option>
+          </select>
+        </label>
+        <div class="form-group">
+          <span class="form-label">Дата рождения <small class="require-flag">*</small></span>
+          <mts-single-datepicker></mts-single-datepicker>
+        </div>
+        <div class="form-group">
+          <span class="form-label">Дата вступления в МШМ <small class="require-flag">*</small></span>
+          <mts-single-datepicker></mts-single-datepicker>
+        </div>
+        <div class="form-group">
+          <span class="form-label">Фото (200 x 300)</span>
+          <input type="file">
+        </div>
+        <label class="form-group">
+          <span class="form-label">Номер телефона (только цифры, например 79051234567)</span>
+          <input type="number" class="form-control">
+        </label>
+        <label class="form-group">
+          <span class="form-label">Адрес</span>
+          <input type="text" class="form-control">
+        </label>
+        <label class="form-group">
+          <span class="form-label">Активность <small class="require-flag">*</small></span>
+          <select class="form-control">
+            <option value="active">Активен</option>
+            <option value="nonactive">Неактивен</option>
+          </select>
+        </label>
+        <div class="buttons-holder">
+          <button type="button" class="btn btn-success">Добавить</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

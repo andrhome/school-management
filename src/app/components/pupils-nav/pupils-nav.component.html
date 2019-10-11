@@ -1,0 +1,31 @@
+<div class="pupils-nav">
+  <div class="pupils-nav__sort" [ngClass]="{ 'disabled': !pupilsList.length }">
+    <div class="left-sort" [ngClass]="{'btn-hover': alphabetOrder}">
+      <button class="sort-btn sort-arrow" (click)="handleAlphabetSort()">
+        <svg-icon *ngIf="alphabetOrder" class ="button-arrow" [ngClass]="{ 'button-arrow-rotate': alphabetOrder !== 'asc' }"
+          src="assets/images/svg/icons/right-arrow.svg" [svgStyle]="{'width.rem': 1.1, 'height.rem': 1.1}"></svg-icon>
+      </button>
+      <button class="sort-btn" (click)="handleNameDirection()">
+        {{ lastNameStart ? 'Фамилия Имя' : 'Имя Фамилия'}}
+      </button>
+    </div>
+    <div class="right-sort" [ngClass]="{'btn-hover': ageOrder}">
+      <button class="sort-btn" (click)="handleAgeSort()">
+        <svg-icon *ngIf="ageOrder" class ="button-arrow" [ngClass]="{ 'button-arrow-rotate': ageOrder !== 'asc' }"
+          src="assets/images/svg/icons/right-arrow.svg" [svgStyle]="{'width.rem': 1.1, 'height.rem': 1.1}"></svg-icon>
+        По возрасту
+      </button>
+    </div>
+  </div>
+  <div class="pupils-nav__pupils-list" *ngIf="pupilsList.length; else emptyMessage">
+    <button *ngFor="let pupil of pupilsList" class="pupil" (click)="handlePupilSelect(pupil)" [ngClass]="{'btn-hover': pupil.id === pupilSelected}">
+        <span>{{ lastNameStart ? pupil.lastName + ' ' + pupil.firstName : pupil.firstName + ' ' + pupil.lastName }} </span>
+      <div class="ml-auto">
+        <span *ngIf="ageOrder">{{ returnAge(pupil.dob) }}</span>
+      </div>
+    </button>
+  </div>
+  <ng-template #emptyMessage>
+    <p class="pupils-nav__empty">Выбранная категория не содержит учеников</p>
+  </ng-template>
+</div>

@@ -1,0 +1,21 @@
+<div class="buttons-holder">
+  <button type="button" class="crude-btn btn btn-light btn-sm"
+          *ngIf="detailsInModal; else linkBtn"
+          (click)="showDetailsModal(item)">
+    <svg-icon src="assets/images/svg/icons/info.svg" [svgStyle]="{'width.rem': 1.6, 'height.rem': 1.6, 'fill': '#ffffff'}"></svg-icon>
+  </button>
+  <ng-template #linkBtn>
+    <a class="crude-btn btn btn-light btn-sm"
+       [routerLink]="'/instruments/list/' + pageName + 's/' + item.id">
+      <svg-icon src="assets/images/svg/icons/info.svg" [svgStyle]="{'width.rem': 1.6, 'height.rem': 1.6, 'fill': '#ffffff'}"></svg-icon>
+    </a>
+  </ng-template>
+  <a class="crude-btn btn btn-primary btn-sm"
+    [routerLink]="'/instruments/add/' + pageName"
+    [queryParams]="{id: item.id}">
+    <svg-icon src="assets/images/svg/icons/edit.svg" [svgStyle]="{'width.rem': 1.6, 'height.rem': 1.6, 'fill': '#ffffff'}"></svg-icon>
+  </a>
+  <button type="button" class="crude-btn btn btn-danger btn-sm" (click)="delete(item)">
+    <svg-icon src="assets/images/svg/icons/rubbish-bin.svg" [svgStyle]="{'width.rem': 1.6, 'height.rem': 1.6, 'fill': '#ffffff'}"></svg-icon>
+  </button>
+</div>

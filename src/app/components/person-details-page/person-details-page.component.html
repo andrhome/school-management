@@ -1,0 +1,83 @@
+<div class="card">
+  <div class="card-body" *ngIf="person">
+    <div class="buttons-holder">
+      <a mat-stroked-button class="btn btn-with-icon"
+         [routerLink]="'/instruments/add/' + editUrl"
+         [queryParams]="{id: person.id}">
+        <svg-icon src="assets/images/svg/icons/edit-icon.svg" [svgStyle]="{'width.%': 90, 'height.%': 90, 'fill': 'currentColor'}"></svg-icon>
+      </a>
+    </div>
+    <div class="info-holder">
+      <div class="photo-block" [style.backgroundImage]="'url(' + getAvatarUrl() + ')'"></div>
+      <div class="info">
+        <div class="info-row" *ngIf="person.lastName">
+          <span class="info-row__label">Фамилия: </span>
+          <span class="info-row__value">{{ person.lastName }}</span>
+        </div>
+        <div class="info-row">
+          <span class="info-row__label" *ngIf="person.firstName">Имя: </span>
+          <span class="info-row__value">{{ person.firstName }}</span>
+        </div>
+        <div class="info-row" *ngIf="person.email">
+          <span class="info-row__label">Email: </span>
+          <span class="info-row__value">{{ person.email }}</span>
+        </div>
+        <div class="info-row" *ngIf="person.gender">
+          <span class="info-row__label">Пол: </span>
+          <span class="info-row__value">{{ (person.gender === 'male') ? 'Мужской' : 'Женский' }}</span>
+        </div>
+        <div class="info-row" *ngIf="person.dob">
+          <span class="info-row__label">Дата рождения: </span>
+          <span class="info-row__value">
+            {{ person.dob | date: 'dd.MM.yyyy' }}
+            {{ getAgeStr(person.dob) ? (', возраст: ' + getAgeStr(person.dob)) : ''}}
+          </span>
+        </div>
+        <div class="info-row" *ngIf="person.enrollmentDate">
+          <span class="info-row__label">Дата вступления в МШМ: </span>
+          <span class="info-row__value">
+            {{ person.enrollmentDate | date: 'dd.MM.yyyy' }}, количество лет в МШМ:
+            {{ getAgeStr(person.enrollmentDate) || 'первый год'}}
+          </span>
+        </div>
+        <div class="info-row" *ngIf="person.ageCategory">
+          <span class="info-row__label">Возрастная категория: </span>
+          <span class="info-row__value">{{ person.ageCategory.name }}</span>
+        </div>
+        <div class="info-row" *ngIf="person.yearOfLearning">
+          <span class="info-row__label">Год обучения: </span>
+          <span class="info-row__value">{{ person.yearOfLearning }}</span>
+        </div>
+        <div class="info-row" *ngIf="person.phone">
+          <span class="info-row__label">Номер телефона: </span>
+          <span class="info-row__value">{{ person.phone }}</span>
+        </div>
+        <div class="info-row" *ngIf="person.address">
+          <span class="info-row__label">Адрес: </span>
+          <span class="info-row__value">{{ person.address }}</span>
+        </div>
+        <div class="info-row" *ngIf="editUrl === unitItemType.PUPIL">
+          <span class="info-row__label">Активность: </span>
+          <span class="info-row__value badge-state badge"
+                [ngClass]="person.active ? 'badge-success' : 'badge-danger'">{{ person.active ? 'Активен' : 'Неактивен' }}</span>
+        </div>
+        <div class="info-row" *ngIf="person.group">
+          <span class="info-row__label">Большая группа: </span>
+          <span class="info-row__value">{{ person.group.name }}</span>
+        </div>
+        <div class="info-row" *ngIf="person.health">
+          <span class="info-row__label">Особенности здоровья: </span>
+          <span class="info-row__value">{{ person.health }}</span>
+        </div>
+        <div class="info-row" *ngIf="person.notes">
+          <span class="info-row__label">Примечание: </span>
+          <span class="info-row__value">{{ person.notes }}</span>
+        </div>
+        <div class="info-row" *ngIf="person.leaderTeacher">
+          <span class="info-row__label">Ведущий учитель: </span>
+          <span class="info-row__value">{{ person.leaderTeacher.lastName }} {{ person.leaderTeacher.firstName }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

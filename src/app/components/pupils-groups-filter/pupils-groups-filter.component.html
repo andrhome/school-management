@@ -1,0 +1,13 @@
+<div class="pupils-groups-filter form-group" *ngIf="groups.length">
+  <mat-form-field floatLabel="always" appearance="outline" class="no-appearance">
+    <mat-select [(ngModel)]="defaultGroupId" disableOptionCentering="true" panelClass="drop-list"
+                (selectionChange)="onGroupChange($event.value)">
+      <ng-container *ngFor="let group of groups">
+        <mat-option *ngIf="group.learners.length" [value]="group.id">
+          {{ group.id }} - {{ group.name }}
+        </mat-option>
+      </ng-container>
+    </mat-select>
+  </mat-form-field>
+</div>
+

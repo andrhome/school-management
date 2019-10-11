@@ -1,0 +1,50 @@
+@import "variables";
+
+.login {
+  min-height: calc(100vh - #{$header-height});
+  background: $white-color;
+  padding-top: 5rem;
+  position: relative;
+
+  &__title {
+    font-size: 2.2rem;
+    font-weight: $normal;
+    margin-bottom: 3rem;
+  }
+
+  &__form-holder {
+    max-width: 360px;
+    background: $light-gray;
+    box-shadow: 0 2px 4px 0 $gray;
+    padding: 4rem 3rem;
+    margin: 0 auto;
+  }
+
+  &__img {
+    width: 9.6rem;
+    height: 9.6rem;
+    display: block;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    margin: 0 auto 2.5rem;
+  }
+
+  &__form {
+    .form-label {
+      color: $text-color;
+    }
+
+    .btn {
+      width: 100%;
+      font-size: 1.6rem;
+      line-height: 1.9rem;
+      background: $primary-color;
+      padding: .95rem 1.8rem;
+    }
+  }
+
+  .loading-spinner {
+    align-items: flex-start;
+    padding-top: 27rem;
+  }
+}

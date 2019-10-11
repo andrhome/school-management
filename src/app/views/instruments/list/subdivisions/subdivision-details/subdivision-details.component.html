@@ -1,0 +1,42 @@
+<div class="modal-panel details-modal">
+  <header class="modal-panel__header mod-header">
+    <div class="mod-header__actions">
+      <button mat-button class="btn-icon" (click)="onClose()" tabindex="-1">
+        <span class="close-icon"></span>
+      </button>
+    </div>
+  </header>
+  <section class="modal-panel__body">
+    <div *ngIf="data">
+      <div class="card">
+        <div class="card-body">
+          <div class="buttons-holder">
+            <a mat-stroked-button class="btn btn-with-icon"
+               [routerLink]="'/instruments/add/subdivision'"
+               [queryParams]="{id: data.id}"
+               (click)="onClose()">
+              <svg-icon src="assets/images/svg/icons/edit-icon.svg" [svgStyle]="{'width.%': 90, 'height.%': 90, 'fill': 'currentColor'}"></svg-icon>
+            </a>
+          </div>
+          <div class="info-holder">
+            <div class="info">
+              <div class="info-row">
+                <span class="info-row__label">Название: </span>
+                <span class="info-row__value">{{ data.name }}</span>
+              </div>
+              <div class="info-row">
+                <span class="info-row__label">Школа: </span>
+                <span class="info-row__value">{{ data.school?.name }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="modal-panel__footer">
+    <button mat-flat-button color="primary" [mat-dialog-close]="'confirm'" type="button">ОК</button>
+  </footer>
+</div>
+
+

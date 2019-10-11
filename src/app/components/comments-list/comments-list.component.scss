@@ -1,0 +1,6 @@
+@import "src/scss/variables";
+
+.comments-list {
+  max-height: 60vh;
+  overflow-y: auto;
+}

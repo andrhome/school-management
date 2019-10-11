@@ -1,0 +1,196 @@
+<div class="add-form-holder container">
+  <mts-add-form-nav [title]="'К списку учеников'" [link]="'/instruments/list/' + pluralItemsType.PUPILS"></mts-add-form-nav>
+  <div class="card">
+    <div class="card-heading">
+      <h4 class="card-title">{{updateMode ? 'Редактировать ученика' : 'Добавить ученика'}}</h4>
+    </div>
+    <div class="card-body">
+      <form class="add-form" [formGroup]="pupilForm">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6">
+              <label class="form-group">
+                <span class="form-label">Фамилия <small class="require-flag">*</small></span>
+                <mat-form-field floatLabel="always" appearance="outline">
+                  <input formControlName="lastName" matInput type="text">
+                </mat-form-field>
+                <span class="invalid-message">Это поле обязательное</span>
+              </label>
+            </div>
+            <div class="col-md-6">
+              <label class="form-group">
+                <span class="form-label">Имя <small class="require-flag">*</small></span>
+                <mat-form-field floatLabel="always" appearance="outline">
+                  <input formControlName="firstName" matInput type="text">
+                </mat-form-field>
+                <span class="invalid-message">Это поле обязательное</span>
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label class="form-group">
+                <span class="form-label">Email <small class="require-flag">*</small></span>
+                <mat-form-field floatLabel="always" appearance="outline">
+                  <input formControlName="email" matInput type="email">
+                </mat-form-field>
+                <span class="invalid-message">Поле Email обязательное и должно быть валидным</span>
+              </label>
+            </div>
+            <div class="col-md-6">
+              <label class="form-group">
+                <span class="form-label">Пол <small class="require-flag">*</small></span>
+                <mat-form-field floatLabel="always" appearance="outline">
+                  <mat-select
+                    disableOptionCentering="true"
+                    panelClass="drop-list"
+                    formControlName="gender">
+                    <mat-option value="male">Мужской</mat-option>
+                    <mat-option value="female">Женский</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <span class="invalid-message">Это поле обязательное</span>
+              </label>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <span class="form-label">Дата рождения <small class="require-flag">*</small></span>
+                <div *ngIf="updateMode; else dobDefaultDatepicker" class="datepicker-wrap">
+                  <div *ngIf="currentPupil.id">
+                    <mts-single-datepicker (selectDate)="onDateChange($event, 'dob')"
+                                           [initialDate]="currentPupil.dob"></mts-single-datepicker>
+                  </div>
+                </div>
+                <ng-template #dobDefaultDatepicker>
+                  <mts-single-datepicker (selectDate)="onDateChange($event, 'dob')"></mts-single-datepicker>
+                </ng-template>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <span class="form-label">Дата вступления в МШМ <small class="require-flag">*</small></span>
+                <div *ngIf="updateMode; else enrollmentDefaultDatepicker" class="datepicker-wrap">
+                  <div *ngIf="currentPupil.id">
+                    <mts-single-datepicker (selectDate)="onDateChange($event, 'enrollmentDate')"
+                                           [initialDate]="currentPupil.enrollmentDate"></mts-single-datepicker>
+                  </div>
+                </div>
+                <ng-template #enrollmentDefaultDatepicker>
+                  <mts-single-datepicker (selectDate)="onDateChange($event, 'enrollmentDate')"></mts-single-datepicker>
+                </ng-template>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-group">
+                <span class="form-label">Возрастная категория <small class="require-flag">*</small></span>
+                <mat-form-field floatLabel="always" appearance="outline">
+                  <mat-select
+                    disableOptionCentering="true"
+                    panelClass="drop-list"
+                    formControlName="ageCategory">
+                    <mat-option *ngFor="let category of ageCategories" [value]="category.id">{{ category.name }}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <span class="invalid-message">Это поле обязательное</span>
+              </label>
+            </div>
+            <div class="col-md-6">
+              <label class="form-group">
+                <span class="form-label">Год обучения <small class="require-flag">*</small></span>
+                <mat-form-field floatLabel="always" appearance="outline">
+                  <input formControlName="yearOfLearning" matInput placeholder="" type="number">
+                </mat-form-field>
+                <span class="invalid-message">Это поле обязательное</span>
+              </label>
+            </div>
+            <div class="col-md-6">
+              <label class="form-group">
+                <span class="form-label">Номер телефона (только цифры, например 79051234567)</span>
+                <mat-form-field floatLabel="always" appearance="outline">
+                  <input formControlName="phone" matInput placeholder="" type="number">
+                </mat-form-field>
+              </label>
+            </div>
+            <div class="col-md-6">
+              <label class="form-group">
+                <span class="form-label">Адрес</span>
+                <mat-form-field floatLabel="always" appearance="outline">
+                  <input formControlName="address" matInput placeholder="" type="text">
+                </mat-form-field>
+              </label>
+            </div>
+            <div class="col-md-6">
+              <label class="form-group">
+                <span class="form-label">Активность <small class="require-flag">*</small></span>
+                <mat-form-field floatLabel="always" appearance="outline">
+                  <mat-select
+                    disableOptionCentering="true"
+                    panelClass="drop-list"
+                    formControlName="active">
+                    <mat-option [value]="true">Активен</mat-option>
+                    <mat-option [value]="false">Неактивен</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <span class="invalid-message">Это поле обязательное</span>
+              </label>
+            </div>
+            <div class="col-md-6">
+              <label class="form-group">
+                <span class="form-label">Большая группа <small class="require-flag">*</small></span>
+                <mat-form-field floatLabel="always" appearance="outline">
+                  <mat-select
+                    disableOptionCentering="true"
+                    panelClass="drop-list"
+                    formControlName="group">
+                    <mat-option *ngFor="let group of groups" [value]="group.id">{{ group.name }}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <span class="invalid-message">Это поле обязательное</span>
+              </label>
+            </div>
+            <div class="col-md-6">
+              <label class="form-group">
+                <span class="form-label">Особенности здоровья</span>
+                <mat-form-field floatLabel="always" appearance="outline">
+                  <textarea matInput formControlName="health"></textarea>
+                </mat-form-field>
+              </label>
+            </div>
+            <div class="col-md-6">
+              <label class="form-group">
+                <span class="form-label">Примечание</span>
+                <mat-form-field floatLabel="always" appearance="outline">
+                  <textarea matInput formControlName="note"></textarea>
+                </mat-form-field>
+              </label>
+            </div>
+            <div class="col-md-6">
+              <label class="form-group">
+                <span class="form-label">Ведущий учитель</span>
+                <mat-form-field floatLabel="always" appearance="outline">
+                  <mat-select
+                    disableOptionCentering="true"
+                    panelClass="drop-list"
+                    formControlName="leaderTeacher">
+                    <mat-option *ngFor="let teacher of teachers" [value]="teacher.id">
+                      {{ teacher.lastName }} {{ teacher.firstName }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </label>
+            </div>
+          </div>
+          <div class="buttons-holder">
+            <button type="button" mat-flat-button color="primary"
+                    (click)="submit()"
+                    [disabled]="pupilForm.invalid">{{ updateMode ? 'Сохранить' : 'Добавить'}}</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="loading-spinner" *ngIf="isLoading">
+    <mat-spinner></mat-spinner>
+    <div class="loading-spinner-overlay"></div>
+  </div>
+</div>

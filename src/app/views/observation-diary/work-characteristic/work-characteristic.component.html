@@ -1,0 +1,23 @@
+<section>
+  <mts-content-block-header [hideLegend]="true"></mts-content-block-header>
+  <div class="inner-block">
+    <div class="inner-block__content characteristic">
+      <ul class="legend-menu characteristic__filter">
+        <li>
+          <button *ngFor="let label of labels" mat-menu-item (click)="higlightActive(label)">
+            <span class="colored-badge colored-badge--rounded mr-2" [ngStyle]="{'backgroundColor': label.color}"></span>
+            <span>{{ label.translate }}</span>
+          </button>
+        </li>
+      </ul>
+      <canvas class="characteristic__chart"
+              baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [legend]="barChartLegend"
+              [chartType]="barChartType">
+      </canvas>
+    </div>
+  </div>
+</section>

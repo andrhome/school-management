@@ -1,0 +1,140 @@
+@import "variables";
+
+mat-dialog-container.mat-dialog-container {
+  padding: 0;
+  box-shadow: $modals-shadow;
+}
+
+.modal-panel {
+  position: relative;
+  width: 100%;
+
+  .form-group  {
+    .mat-form-field {
+      font-size: 1.4rem;
+      line-height: 1.7rem;
+    }
+  }
+
+  &__header {
+    padding: 2rem 2rem 0 2rem;
+  }
+
+  &__body {
+    padding: 0 2rem;
+  }
+
+  &__footer {
+    @include flex-box(row, flex-end, center);
+    padding: 0 2rem 2rem;
+  }
+
+  &--small {
+    max-width: 320px;
+
+    .modal-panel__header {
+      padding: 1.6rem 1.6rem 0 1.6rem;
+
+      &.mod-header {
+        padding: 1.5rem;
+      }
+    }
+
+    .modal-panel__body {
+      padding: 0 1.6rem;
+    }
+
+    .modal-panel__footer {
+      padding: 0 1.6rem 1.6rem 1.6rem;
+    }
+  }
+
+  @include media-min-screen($mobile) {
+    width: calc(600px - 4.8rem);
+  }
+
+  .buttons-holder {
+    margin: 0;
+  }
+}
+
+.mod-header {
+  @include flex-box(row-reverse, space-between, flex-start);
+  border-bottom: 1px solid $border-color-2;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+
+  &__title {
+    max-width: calc(100% - 60px);
+    margin-right: .8rem;
+    font-size: 1.6rem;
+    line-height: 1.19;
+    font-weight: normal;
+    color: $black-color;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__actions {
+    @include flex-box(row, flex-end, center);
+    width: 11.5rem;
+    min-width: 11.5rem;
+    margin-left: auto;
+    color: $label-color;
+
+    .btn-icon {
+      width: 2.2rem;
+      height: 2.2rem;
+      margin-left: 1.2rem;
+    }
+  }
+
+  &__input {
+    flex-grow: 1;
+    margin-right: 1.5rem;
+    margin-bottom: .5rem;
+  }
+
+  &--wide-actions {
+    .modal-header__title {
+      max-width: calc(100% - 150px);
+    }
+  }
+}
+
+.mod-sub-title {
+  max-width: 100%;
+  font-size: 1.3rem;
+  line-height: 1.19;
+  font-weight: normal;
+  color: $label-color;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.modal-panel {
+  .info-holder {
+    padding: .5rem 0 0;
+  }
+
+  &.details-modal {
+    width: 75rem;
+
+    @include media-max-screen($tablet-2) {
+      width: 56rem;
+    }
+    @include media-max-screen($mobile) {
+      width: 100%;
+    }
+
+    .card-body {
+      padding: 1.5rem;
+    }
+
+    .modal-panel {
+      &__footer {
+        margin-top: 2rem;
+      }
+    }
+  }
+}

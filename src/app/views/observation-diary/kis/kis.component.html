@@ -1,0 +1,40 @@
+<div class="kis">
+  <mts-content-block-header
+    [showTeachersFilter]="true"
+    [customTitle]="'Индивидуальные собеседования'"
+    [showAddAction]="true"
+    [hideLegend]="true"
+    (addNewAction)="createUpdateInterview()"
+  ></mts-content-block-header>
+
+  <div class="posts-list-container ps" [perfectScrollbar]="{}">
+    <mts-post *ngFor="let interview of interviews"
+              [post]="interview"
+              [postType]="postType"
+              [currentUser]="currentUser"
+              class="mb-3"
+              (editPost)="createUpdateInterview($event)"
+              (deletePost)="deleteInterview($event)"
+    >
+      <ng-container class="header-content">
+        <span>КИС: {{ interview.learner.lastName + ' ' +  interview.learner.firstName }} {{ interview.meetDate | date: 'dd.MM.yyyy' }}</span>
+      </ng-container>
+      <ng-container class="simple-text">
+        <ul class="description-list mb-2">
+          <li>Содержание беседы: {{ interview.context }}</li>
+          <li>Договоренности: {{ interview.arrangements }}</li>
+          <li>Участники со стороны школы: {{ interview.familySideParticipants }}</li>
+          <li>Участники со стороны семьи: {{ interview.schoolSideParticipants }}</li>
+        </ul>
+      </ng-container>
+    </mts-post>
+    <div class="no-items-message" *ngIf="!isLoading && !interviews.length">Индивидуальные собеседования не найдены!</div>
+  </div>
+
+  <div class="loading-spinner" *ngIf="isLoading">
+    <mat-spinner></mat-spinner>
+    <div class="loading-spinner-overlay"></div>
+  </div>
+
+</div>
+

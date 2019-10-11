@@ -1,0 +1,110 @@
+@import 'variables';
+@import 'mixin';
+
+.progress-block {
+  padding: 2rem;
+  border-bottom: 1px solid $border-color-2;
+
+  &__title {
+    font-size: 1.4rem;
+    font-weight: normal;
+    color: $text-color-4;
+  }
+
+  &__row {
+    margin-bottom: 1.2rem;
+  }
+
+  @include  media-min-screen($tablet) {
+    &__row {
+      display: flex;
+    }
+  }
+}
+
+.progress-key {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: .4rem;
+  font-size: 1.3rem;
+
+  @include  media-min-screen($tablet) {
+    flex-basis: 170px;
+    max-width: 170px;
+  }
+}
+
+.progress-bar-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-grow: 1;
+  max-width: 580px;
+  padding-right: 40px;
+}
+
+.progress-line {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  height: 24px;
+  padding: .45rem .8rem;
+  background-color: #ccc;
+  border-radius: $small-radius;
+
+  &__value {
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+
+    &--lighten {
+      opacity: .2;
+    }
+
+    & + .progress-line__value {
+      margin-left: .6rem;
+    }
+  }
+
+  &--thin {
+    position: relative;
+    height: 4px;
+    padding: 0 .8rem;
+
+    .progress-line__value {
+      position: absolute;
+      right: 0;
+      transform: translate(calc(100% + .5rem), .1rem);
+      color: $text-color-4;
+      font-size: 1.1rem;
+    }
+  }
+
+  & + & {
+    margin-top: .5rem;
+  }
+}
+
+.handling-grouped {
+
+  margin-top: 2rem;
+
+  &__list {
+    max-width: 350px;
+  }
+
+  &__checkbox {
+    margin-bottom: .8rem;
+  }
+
+  @include media-min-screen( $desktop ) {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+
+    &__checkbox {
+      flex-grow: 1;
+      margin-left: 1.2rem;
+    }
+  }
+}

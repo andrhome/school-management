@@ -1,0 +1,40 @@
+<div class="notes">
+  <mts-content-block-header
+    [hideTitle]="true"
+    [showSubjectsFilter]="true"
+    [showTeachersFilter]="true"
+    [showNotesTypeFilter]="true"
+    (typeFilterChange)="typeFilterChange($event)"
+  ></mts-content-block-header>
+
+  <div class="posts-list-container ps" [perfectScrollbar]="{}">
+    <button mat-flat-button color="primary" (click)="createUpdateNote()" class="mb-4">create test note</button>
+    <mts-post *ngFor="let note of notes"
+              [post]="note"
+              [postType]="postType"
+              [currentUser]="currentUser"
+              [hasArchivation]="true"
+              class="mb-3"
+              (editPost)="createUpdateNote($event)"
+              (deletePost)="deleteNote($event)"
+              (archivePost)="archiveNote($event)"
+    >
+      <ng-container class="header-content">
+        <span>{{ note.title || 'Empty title' }}</span>
+        <div class="badges-list">
+          <svg-icon class="colored-badge colored-badge--rounded colored-badge--planing"
+                    src="assets/images/svg/icons/red-flag.svg"
+                    [svgStyle]="{'width.rem': 1.7, 'height.rem': 1.7}"></svg-icon>
+          <span class="colored-badge colored-badge--rounded colored-badge--wait">15</span>
+        </div>
+      </ng-container>
+      <ng-container class="simple-text">{{ note.text }}</ng-container>
+    </mts-post>
+    <div class="no-items-message" *ngIf="!isLoading && !notes.length">Заметки не найдены!</div>
+  </div>
+
+  <div class="loading-spinner" *ngIf="isLoading">
+    <mat-spinner></mat-spinner>
+    <div class="loading-spinner-overlay"></div>
+  </div>
+</div>

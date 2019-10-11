@@ -1,0 +1,22 @@
+@import "src/scss/variables";
+
+:host {
+  display: block;
+  margin-top: 2rem;
+}
+
+.comment {
+  &__text {
+    max-width: 100%;
+    margin-left: 2.5rem;
+    color: $text-color-4;
+    font-size: 1.3rem;
+    line-height: 1.15;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__controls {
+    margin-left: 1.5rem;
+  }
+}

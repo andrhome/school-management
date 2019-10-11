@@ -1,0 +1,39 @@
+<div class="list-nav">
+  <div class="content-block p-4 mb-4">
+    <div class="list-nav__heading">
+      <div class="title-holder flex-row-start">
+        <h5 class="content-block-title">Список {{ title }}</h5>
+        <a mat-flat-button color="primary" [routerLink]="link" class="ml-5">Добавить {{ btnText }}</a>
+        <div class="amount-block flex-row-start" *ngIf="itemsAmount || (itemsAmount === 0)">
+          <h5 class="content-block-title">Всего {{ title }}</h5>
+          <span class="colored-badge colored-badge--rounded colored-badge--l colored-badge--success">
+            <span class="colored-badge__text">{{ itemsAmount }}</span>
+          </span>
+        </div>
+      </div>
+      <button mat-stroked-button
+              class="search-switcher"
+              (click)="toggleSearchBar()">{{ isSearchBlock ? 'Свернуть поиск' : 'Поиск'}}</button>
+    </div>
+    <div class="search-holder mt-4 pt-4 row" [hidden]="!isSearchBlock">
+      <label class="form-group col-md-4">
+        <span class="form-label">Поиск</span>
+        <mat-form-field floatLabel="always" appearance="outline">
+          <input matInput
+                 type="text"
+                 (keyup)="onSearch.next($event.target.value)"
+                 autocomplete="off">
+        </mat-form-field>
+      </label>
+      <div class="col-md-8">
+        <ng-content></ng-content>
+      </div>
+    </div>
+    <div class="pagination-holder mt-4 pt-4" *ngIf="itemsAmount > perPage">
+      <pagination-controls (pageChange)="changePage($event)"
+                           responsive="true"
+                           previousLabel=""
+                           nextLabel=""></pagination-controls>
+    </div>
+  </div>
+</div>

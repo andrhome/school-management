@@ -1,0 +1,90 @@
+<div class="modal-panel">
+  <header class="modal-panel__header mod-header">
+    <div class="mod-header__actions">
+      <button mat-button class="btn-icon" (click)="onClose()">
+        <svg-icon src="assets/images/svg/icons/close-icon.svg" [svgStyle]="{'width.%': 100, 'height.%': 100, 'fill': 'currentColor'}"></svg-icon>
+      </button>
+    </div>
+    <h3 class="mod-header__title">{{ updateMode ? 'Редактирование' : 'Создание' }} индивидуального собеседования</h3>
+  </header>
+  <section class="modal-panel__body">
+    <form class="form" [formGroup]="form">
+      <div class="row">
+        <div class="col-md-6">
+          <label class="form-group">
+            <span class="form-label">Ученик</span>
+            <mat-form-field floatLabel="always" appearance="outline">
+              <mat-select
+                formControlName="learner"
+                placeholder="Выберите ученика"
+                disableOptionCentering="true"
+                panelClass="drop-list">
+                <mat-option *ngFor="let pupil of pupils" [value]="pupil?.id">
+                  {{ pupil.firstName }} {{ pupil.lastName }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </label>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <span class="form-label">Дата проведения</span>
+            <mts-single-datepicker
+              [initialDate]="meetDate"
+              (selectDate)="handleDateStart($event)" ></mts-single-datepicker>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label class="form-group">
+            <span class="form-label">Участники со стороны семьи</span>
+            <mat-form-field floatLabel="always" appearance="outline">
+              <textarea formControlName="familySideParticipants" matInput placeholder="Текст"></textarea>
+            </mat-form-field>
+          </label>
+        </div>
+        <div class="col-md-6">
+          <label class="form-group">
+            <span class="form-label">Участники со стороны школы</span>
+            <mat-form-field floatLabel="always" appearance="outline">
+              <textarea formControlName="schoolSideParticipants" matInput placeholder="Текст"></textarea>
+            </mat-form-field>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <label class="form-group">
+            <span class="form-label">Содержание беседы</span>
+            <mat-form-field floatLabel="always" appearance="outline">
+              <textarea formControlName="context" matInput placeholder="Текст"></textarea>
+            </mat-form-field>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <label class="form-group">
+            <span class="form-label">Договоренности</span>
+            <mat-form-field floatLabel="always" appearance="outline">
+              <textarea formControlName="arrangements" matInput placeholder="Текст"></textarea>
+            </mat-form-field>
+          </label>
+        </div>
+      </div>
+    </form>
+  </section>
+  <footer class="modal-panel__footer">
+    <button mat-flat-button color="primary" type="submit" [disabled]="form.invalid" (click)="onSave()">
+      Сохранить
+    </button>
+    <button mat-flat-button class="ml-3" type="button" (click)="onClose()">
+      Отмена
+    </button>
+  </footer>
+  <div class="loading-spinner" *ngIf="isLoading">
+    <mat-spinner></mat-spinner>
+    <div class="loading-spinner-overlay"></div>
+  </div>
+</div>

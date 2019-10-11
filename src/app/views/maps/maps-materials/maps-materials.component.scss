@@ -1,0 +1,42 @@
+@import "src/scss/extends";
+@import "src/scss/mixin";
+
+:host {
+  @extend .flex-qrow-set;
+}
+
+.maps-materials {
+
+  &-list {
+    margin-top: 1rem;
+  }
+
+  &-item {
+    margin-bottom: 1.5rem;
+
+    a {
+      display: block;
+      position: relative;
+
+      &:hover {
+        color: $white-color;
+        .mat-card {
+          @include transition;
+          background: $primary-color;
+          color: $white-color;
+        }
+      }
+
+      .icon {
+        position: absolute;
+        top: 1.5rem;
+        left: 1.6rem;
+        z-index: 1;
+      }
+
+      .mat-card {
+        padding: 1.7rem 1.6rem 1.5rem 5rem;
+      }
+    }
+  }
+}

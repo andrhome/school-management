@@ -1,0 +1,21 @@
+@import "variables";
+
+.handling-title {
+  color: $text-color-4;
+}
+
+.handling-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .4rem .6rem;
+  border-radius: $small-radius;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+
+  &__action {
+    cursor: pointer;
+  }
+}

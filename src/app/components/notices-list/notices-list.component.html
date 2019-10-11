@@ -1,0 +1,3 @@
+<mts-notice-item *ngFor="let notice of notices" [notice]="notice" (removeNoticeEvent)="removeNotice($event)"></mts-notice-item>
+<p *ngIf="!notices?.length">Нет уведомлений</p>
+

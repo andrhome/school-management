@@ -1,0 +1,153 @@
+@import "variables";
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+
+  &__title {
+    font-size: 1.6rem;
+    font-weight: normal;
+  }
+
+  &__filter {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+    margin-right: auto;
+  }
+}
+
+.calendar-nav {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 0 3rem;
+
+  &__title {
+    padding: 0 1rem;
+    font-size: 1.6rem;
+  }
+}
+
+.shedule-calendar {
+  position: relative;
+}
+
+::ng-deep .cal-week-view {
+  .cal-day-headers {
+    .cal-header {
+      padding: 1rem;
+      border-right: none !important;
+      border-left: none !important;
+
+      > b {
+        font-weight: normal;
+        font-size: 1.3rem;
+        color: $label-color;
+        opacity: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      > p {
+        margin-bottom: .5rem;
+        font-weight: normal;
+        font-size: 1.6rem;
+        opacity: 1;
+      }
+
+      &.cal-today {
+        background-color: transparent;
+        > p,
+        > b {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+
+  .past-lesson {
+    opacity: .45;
+  }
+
+  .cal-time {
+    font-weight: normal;
+    font-size: 1.3rem;
+  }
+
+  .cal-day-column {
+    border-left-color: $border-color-2;
+  }
+
+  .cal-hour {
+    mwl-calendar-week-view-hour-segment:not(:last-child) {
+      .cal-hour-segment {
+        border-color: transparent !important;
+      }
+    }
+
+    mwl-calendar-week-view-hour-segment:last-child {
+      .cal-hour-segment {
+        border-color: $border-color-2;
+        border-bottom-style: solid;
+      }
+    }
+  }
+
+  .cal-hour-odd {
+    background-color: transparent;
+  }
+
+  .cal-time-events {
+    .cal-event-container {
+      .cal-event {
+        padding: .5rem;
+        line-height: 1;
+      }
+
+      &.template {
+        .cal-event {
+          background-color: transparent!important;
+          border: 2px solid $primary-color!important;
+        }
+      }
+    }
+
+    .cal-event-title {
+      display: inline-block;
+      white-space: normal;
+      font-size: 1.3rem;
+      line-height: 1.15;
+    }
+
+    .cal-event {
+      width: calc(100% - 10px);
+      transition: width .2s;
+    }
+
+    .cal-drag-active {
+      .cal-event {
+        width: calc(100% - 2px);
+      }
+    }
+  }
+}
+
+.groups-select {
+  max-width: 13rem;
+  font-size: 1.3rem;
+  margin: 0 0 0 2rem;
+
+  ::ng-deep {
+    .mat-form-field-appearance-outline {
+      .mat-form-field-infix {
+        font-size: 1.3rem;
+        padding: .2rem 0;
+      }
+    }
+  }
+}
+

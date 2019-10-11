@@ -1,0 +1,14 @@
+@import "variables";
+@import "mixin";
+
+:host {
+  font-size: 1.4rem;
+}
+
+.sidebar {
+  &-title {
+    font: inherit;
+    padding: .7rem 1.3rem;
+    margin-bottom: 2rem;
+  }
+}

@@ -1,0 +1,94 @@
+@import 'variables';
+@import 'mixin';
+
+.pupils-nav {
+  width: 22rem;
+
+  &__sort {
+    display: flex;
+    margin: 0 0 12px;
+    align-items: center;
+
+    .left-sort,
+    .right-sort {
+      @include flex-box(row, center, center);
+      width: 50%;
+      height: 24px;
+      border-radius: $small-radius;
+
+      &.btn-hover {
+        background: $hover-color;
+
+        .sort-btn {
+          color: $black-color;
+        }
+      }
+
+      &.right-sort {
+        .sort-btn {
+          @include flex-box(row, center, center);
+        }
+      }
+    }
+
+    .left-sort {
+      .sort-arrow {
+        padding: 0;
+        margin: 0 3px;
+      }
+    }
+
+    .right-sort {
+      .button-arrow {
+        margin-right: 5px;
+      }
+    }
+
+    &.disabled {
+      opacity: .7;
+      pointer-events: none;
+    }
+  }
+
+  &__empty {
+    padding: 1rem;
+    font-size: 1.5rem;
+    line-height: 1.35;
+    color: $gray;
+  }
+}
+
+.sort-btn {
+  .button-arrow {
+    display: block;
+    transform: rotate(-90deg);
+  }
+
+  .button-arrow-rotate {
+    transform: rotate(90deg);
+  }
+}
+
+.pupil {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 12px;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  color: $text-color-4;
+  cursor: pointer;
+  border-radius: $small-radius;
+
+  > span {
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &:hover,
+  &.btn-hover {
+    background: $hover-color;
+    color: $black-color;
+  }
+}

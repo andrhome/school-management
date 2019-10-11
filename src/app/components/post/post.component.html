@@ -1,0 +1,79 @@
+<div class="note" [ngClass]="{'note--archived': post.isArchived}">
+  <header class="note-header">
+    <div class="note-header__title">
+      <ng-content select=".header-content"></ng-content>
+    </div>
+    <span class="note-header__date">{{ post.updatedAt || post.createdAt | date: 'dd.MM.yyyy'}}</span>
+  </header>
+  <div class="note__text">
+    <ng-content select=".simple-text"></ng-content>
+  </div>
+  <div class="note__info">
+    <mts-user-row *ngIf="post.createdBy" [user]="post.createdBy"></mts-user-row>
+    <h5 *ngIf="post.subject" class="color-blue ml-3">{{ post.subject.name }}</h5>
+  </div>
+  <div *ngIf="visibleComments" class="p-3">
+    <form *ngIf="creatingComment; else createActions" [formGroup]="newCommentform" class="mb-2">
+      <label class="form-group">
+        <mat-form-field floatLabel="always" appearance="outline">
+          <textarea formControlName="text" matInput placeholder="Текст комментария"></textarea>
+        </mat-form-field>
+      </label>
+      <button mat-flat-button color="primary" [disabled]="newCommentform.invalid" class="btn-small" (click)="saveComment()">Сохранить</button>
+      <button mat-button class="btn-small" (click)="cancelCommentation()">Отмена</button>
+    </form>
+    <ng-template #createActions>
+      <div class="mb-3">
+        <button mat-stroked-button color="primary" class="btn-small" (click)="creatingComment = true">Добавить комментарий</button>
+        <button mat-button class="btn-small" (click)="visibleComments = !visibleComments">Cкрыть комментарии</button>
+      </div>
+    </ng-template>
+    <mts-comments-list
+      *ngIf="post.comments.length"
+      class="mb-2"
+      [parentType]="postType"
+      [comments]="post.comments"
+      [currentUser]="currentUser"
+      (deleteComment)="deleteComment($event)"
+    ></mts-comments-list>
+  </div>
+  <div class="control-block">
+    <ng-container *ngIf="canEdit">
+      <button mat-button class="control-block__edit btn-link" title="Pедактировать" (click)="edit(post)"
+              [disabled]="post.isArchived">редактировать
+      </button>
+      <span>&bull;</span>
+      <button mat-button class="control-block__delete btn-link" title="Удалить" (click)="delPost(post)"
+              [disabled]="post.isArchived">удалить
+      </button>
+      <span>&bull;</span>
+      <ng-container *ngIf="hasArchivation">
+        <button *ngIf="!post.isArchived" mat-button class="control-block__archive btn-link" title="Aрхивировать"
+                (click)="archive(post)">архивировать
+        </button>
+        <button *ngIf="post.isArchived" mat-button class="control-block__archive btn-link" title="Разархивировать"
+                (click)="archive(post)">разархивировать
+        </button>
+        <span>&bull;</span>
+      </ng-container>
+    </ng-container>
+    <button *ngIf="!post.comments.length"
+            mat-button
+            class="control-block__comment btn-link"
+            title="Kомментировать"
+            (click)="addComment()"
+            [disabled]="post.isArchived">
+      комментировать
+    </button>
+    <button *ngIf="post.comments.length"
+            mat-button
+            class="control-block__comment btn-link"
+            title="Kомментировать"
+            (click)="visibleComments = !visibleComments"
+            [disabled]="post.isArchived">
+      <span *ngIf="!visibleComments">
+        комментарии <span class="colored-badge colored-badge--rounded colored-badge--success"><span class="colored-badge__text">{{ post.comments.length }}</span></span></span>
+      <span *ngIf="visibleComments">скрыть комментарии</span>
+    </button>
+  </div>
+</div>

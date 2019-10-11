@@ -1,0 +1,47 @@
+<div class="modal-panel modal-panel--small">
+  <form [formGroup]="renameLessonForm">
+    <header class="modal-panel__header mod-header">
+      <div class="mod-header__actions">
+        <button mat-button class="btn-icon ml-2" (click)="onClose()">
+          <svg-icon src="assets/images/svg/icons/close-icon.svg"
+                    [svgStyle]="{'width.%': 100, 'height.%': 100, 'fill': 'currentColor'}"></svg-icon>
+        </button>
+      </div>
+      <h1 class="mod-header__title">Изменение названия</h1>
+    </header>
+
+    <section class="modal-panel__body pb-4 pt-5">
+      <p class="form-group">
+        <mat-form-field floatLabel="always" appearance="outline">
+          <input formControlName="name" matInput placeholder="" type="text">
+        </mat-form-field>
+      </p>
+    </section>
+
+    <footer class="modal-panel__footer">
+
+      <button mat-flat-button
+              color="primary"
+              type="button"
+              class="btn-small"
+              [disabled]="renameLessonForm.invalid"
+              (click)="onSave()">
+        Сохранить
+      </button>
+      <button mat-stroked-button
+              color="primary"
+              type="button"
+              class="btn-small ml-3"
+              (click)="onClose()">
+        Отмена
+      </button>
+
+    </footer>
+
+    <div class="loading-spinner" *ngIf="isLoading">
+      <mat-spinner></mat-spinner>
+      <div class="loading-spinner-overlay"></div>
+    </div>
+
+  </form>
+</div>

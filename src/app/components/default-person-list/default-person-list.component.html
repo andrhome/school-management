@@ -1,0 +1,41 @@
+<div class="row" *ngIf="itemsList.length">
+  <div class="photo-item col-lg-3 col-md-4 col-sm-6 mb-4" *ngFor="let item of itemsList | paginate: {
+    itemsPerPage: paginationParams.perPage || 20,
+    currentPage: paginationParams.page || 1,
+    totalItems: paginationParams.total
+  }">
+    <div class="card">
+      <div class="photo-item__heading">
+        <h4 class="photo-item__name card-title" [title]="item.lastName + ' ' + item.firstName">
+          {{ item.lastName }} {{ item.firstName }}
+        </h4>
+        <div class="photo-item__subtitle"
+             *ngIf="item.group"
+             [title]="item.group.name">{{ item.group.name }}</div>
+      </div>
+      <div class="photo-item__body">
+        <div class="photo-item__photo" [ngStyle]="{'backgroundImage': 'url('+ 'assets/images/no-photo.png' +')'}"></div>
+        <div class="buttons-wrap">
+          <div class="pupils-buttons" *ngIf="isPupil">
+            <button type="button"
+                    mat-stroked-button
+                    color="primary"
+                    class="btn btn-small"
+                    (click)="goToObservationDiary(item, 'kis')">
+              <span class="btn-letters">КИС</span>
+            </button>
+            <button type="button"
+                    mat-stroked-button
+                    class="btn btn-small"
+                    (click)="goToObservationDiary(item, 'notes')">
+              <span class="btn-letters">ДН</span>
+            </button>
+          </div>
+          <mts-list-buttons-set (deleteItem)="delete($event)"
+                                [pageName]="pageName"
+                                [item]="item"></mts-list-buttons-set>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

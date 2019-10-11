@@ -1,0 +1,69 @@
+<div class="modal-panel modal-panel--small">
+  <header class="modal-panel__header mod-header">
+    <div class="mod-header__actions">
+      <button mat-button class="btn-icon"
+              *ngIf="modalData.status !== lessonsStatusType.PAST"
+              (click)="editLesson(modalData)">
+        <svg-icon src="assets/images/svg/icons/edit-icon.svg"
+                  [svgStyle]="{'width.%': 90, 'height.%': 90, 'fill': 'currentColor'}"></svg-icon>
+      </button>
+      <button mat-button class="btn-icon del-btn-icon" (click)="deleteLessonHandler(modalData)">
+        <svg-icon src="assets/images/svg/icons/rubbish-bin.svg"
+                  [svgStyle]="{'width.%': 90, 'height.%': 90, 'fill': 'currentColor'}"></svg-icon>
+      </button>
+      <button mat-button class="btn-icon" (click)="onClose()">
+        <svg-icon src="assets/images/svg/icons/close-icon.svg"
+                  [svgStyle]="{'width.%': 100, 'height.%': 100, 'fill': 'currentColor'}"></svg-icon>
+      </button>
+    </div>
+    <h1 class="mod-header__title">{{ modalData.title }}</h1>
+  </header>
+  <section class="modal-panel__body">
+    <p class="mod-sub-title mb-4">{{ modalData.start | calendarDate:'dayViewHour':locale }} - {{ modalData.end |
+      calendarDate:'dayViewHour':locale }}</p>
+    <div class="user-row mb-2">
+      <div class="user-row__avatar"
+           [ngStyle]="{'background-image': modalData.lessonData.teacher.photo ? 'url('+ modalData.lessonData.teacher.photo +')' : 'url(assets/images/no-photo.png)'}"></div>
+      <span class="user-row__name">{{ modalData.lessonData.teacher.lastName }} {{ modalData.lessonData.teacher.firstName }}</span>
+    </div>
+  </section>
+  <div class="visitor">
+    <header class="visitor__header">
+      <div class="d-flex">
+        <span class="mr-5 color-blue">{{ modalData.lessonData.group.name }}</span>
+        <span class="d-inline-flex" *ngIf="selectedPupils.length !== 0">
+          <span class="visitor-item__status visitor-item__status--invited"></span>
+          <span class="color-green ml-1">{{ selectedPupils.length }}</span>
+        </span>
+      </div>
+      <button mat-button class="btn-icon" (click)="showPupilsList = !showPupilsList">
+        <svg-icon src="assets/images/svg/icons/chevron-top.svg"
+                  [svgStyle]="{'width.rem': 1.2, 'height.rem': 1.2}"></svg-icon>
+      </button>
+    </header>
+    <ul class="visitor__list ps" *ngIf="showPupilsList" [perfectScrollbar]="{}">
+      <li *ngFor="let id of pupils.id;">
+        <button mat-button class="visitor-item" (click)="toggleVisiting(id)">
+            <span class="visitor-item__status"
+                  [ngClass]="{
+                  'visitor-item__status--invited': pupils[id].invited,
+                  'visitor-item__status--wait': pupils[id].waiting
+                  }"></span>
+          <span class="visitor-item__name">{{ pupils[id].name }}</span>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <footer class="modal-panel__footer" *ngIf="modalData.status !== lessonsStatusType.PAST">
+    <button mat-button
+            type="button"
+            class="mt-3 color-gray-dark"
+            (click)="onAddMaterial(modalData.title)">
+      Добавить материалы
+    </button>
+  </footer>
+  <div class="loading-spinner" *ngIf="isLoading">
+    <mat-spinner></mat-spinner>
+    <div class="loading-spinner-overlay"></div>
+  </div>
+</div>

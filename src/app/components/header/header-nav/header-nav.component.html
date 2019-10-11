@@ -1,0 +1,71 @@
+<div class="header-nav-holder" [ngClass]="{'show-nav': isShowNav}">
+  <div class="header-nav-mobile-toggle" (click)="toggleNav()">
+    <span class="line"></span>
+    <span class="line"></span>
+    <span class="line"></span>
+  </div>
+  <ul class="header-nav">
+    <li class="header-nav__link-holder">
+      <a [routerLink]="'/information'" class="header-nav__link">Информация</a>
+    </li>
+    <li class="header-nav__link-holder">
+      <a [routerLink]="'/dashboard'" class="header-nav__link">Занятия</a>
+    </li>
+    <li class="header-nav__link-holder">
+      <a class="header-nav__link dropdown-btn"
+              [matMenuTriggerFor]="instrumentsMenu">Инструменты</a>
+      <mat-menu #instrumentsMenu="matMenu" xPosition="before">
+        <button type="button" mat-menu-item [matMenuTriggerFor]="addSubMenu">Добавить</button>
+        <button type="button" mat-menu-item [matMenuTriggerFor]="listSubMenu">Список</button>
+      </mat-menu>
+
+      <mat-menu #addSubMenu="matMenu">
+        <a [routerLink]="'/instruments/add/school'" mat-menu-item>Школу</a>
+        <a [routerLink]="'/instruments/add/admin'" mat-menu-item>Администратора</a>
+        <a [routerLink]="'/instruments/add/big-group'" mat-menu-item>Большую группу</a>
+        <a [routerLink]="'/instruments/add/age-category'" mat-menu-item>Возрастную категорию</a>
+        <a [routerLink]="'/instruments/add/subdivision'" mat-menu-item>Подразделение</a>
+        <a [routerLink]="'/instruments/add/subject'" mat-menu-item>Предмет</a>
+        <a [routerLink]="'/instruments/add/parent'" mat-menu-item disabled>Родителя</a>
+        <a [routerLink]="'/instruments/add/academic-discipline'" mat-menu-item disabled>Учебную дисциплину</a>
+        <a [routerLink]="'/instruments/add/pupil'" mat-menu-item>Ученика</a>
+        <a [routerLink]="'/instruments/add/teacher'" mat-menu-item>Учителя</a>
+      </mat-menu>
+      <mat-menu #listSubMenu="matMenu">
+        <a [routerLink]="'/instruments/list/schools'" mat-menu-item>Школ</a>
+        <a [routerLink]="'/instruments/list/admins'" mat-menu-item>Администраторов</a>
+        <a [routerLink]="'/instruments/list/big-groups'" mat-menu-item>Больших групп</a>
+        <a [routerLink]="'/instruments/list/age-categories'" mat-menu-item>Возрастных категорий</a>
+        <a [routerLink]="'/instruments/list/subdivisions'" mat-menu-item>Подразделений</a>
+        <a [routerLink]="'/instruments/list/subjects'" mat-menu-item>Предметов</a>
+        <a [routerLink]="'/instruments/list/parents'" mat-menu-item disabled>Родителей</a>
+        <a [routerLink]="'/instruments/list/academic-disciplines'" mat-menu-item disabled>Учебных дисциплин</a>
+        <a [routerLink]="'/instruments/list/pupils'" mat-menu-item>Учеников</a>
+        <a [routerLink]="'/instruments/list/teachers'" mat-menu-item>Учителей</a>
+      </mat-menu>
+    </li>
+    <li class="header-nav__link-holder">
+      <a [routerLink]="'/planning'" class="header-nav__link">Планирование</a>
+    </li>
+    <li class="header-nav__link-holder">
+      <a class="header-nav__link dropdown-btn"
+              [matMenuTriggerFor]="mapsMenu">Карты</a>
+      <mat-menu #mapsMenu="matMenu" xPosition="before">
+        <a [routerLink]="'/maps/maps-materials'" mat-menu-item>Карты материалов</a>
+      </mat-menu>
+    </li>
+    <li class="header-nav__link-holder">
+      <a class="header-nav__link dropdown-btn"
+              [matMenuTriggerFor]="observationMenu">Дневник наблюдений</a>
+      <mat-menu #observationMenu="matMenu" xPosition="before">
+        <a [routerLink]="'/observation'"
+           [queryParams]="{observationType: observation.BY_PUPIL, page: 'notes'}"
+           mat-menu-item>По ученику</a>
+        <a [routerLink]="'/observation'"
+           [queryParams]="{observationType: observation.BY_GROUP, page: 'notes'}"
+           mat-menu-item>По группе</a>
+      </mat-menu>
+    </li>
+  </ul>
+  <div class="header-nav-overlay" (click)="toggleNav()"></div>
+</div>

@@ -1,0 +1,26 @@
+@import "variables";
+@import "mixin";
+
+.list-nav {
+  &__heading {
+    @include flex-box(row, space-between, center);
+  }
+
+  .search-holder {
+    border-top: 1px solid $border-color-2;
+
+    .form-group {
+      margin-bottom: 0;
+    }
+  }
+
+  .amount-block {
+    margin-left: 3rem;
+
+    .colored-badge {
+      font-size: 1.4rem;
+      line-height: normal;
+      margin-left: 1.3rem;
+    }
+  }
+}

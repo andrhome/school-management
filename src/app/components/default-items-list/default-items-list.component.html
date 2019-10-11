@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-md-4 mb-4" *ngFor="let item of itemsList | paginate: {
+    itemsPerPage: paginationParams.perPage || 20,
+    currentPage: paginationParams.page || 1,
+    totalItems: paginationParams.total
+  }">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">{{ item.name }}</h4>
+<!--        <p class="card-text">{{ item.description }}</p>-->
+<!--        <p *ngIf="item.fromAge !== undefined" class="card-text">От {{ item.fromAge }} до {{ item.toAge }} лет</p>-->
+<!--        <p *ngIf="item.active !== undefined" class="card-text">Активность: {{ item.active === true ? 'Активен' : 'Неактивен' }}</p>-->
+        <p *ngIf="item.firstName !== undefined" class="card-text">{{ item.firstName }} {{ item.lastName }}</p>
+        <mts-list-buttons-set [pageName]="pageName"
+                              [detailsInModal]="detailsInModal"
+                              (showDetails)="showDetailsModal($event)"
+                              (deleteItem)="delete($event)"
+                              [item]="item"></mts-list-buttons-set>
+      </div>
+    </div>
+  </div>
+</div>

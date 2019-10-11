@@ -1,0 +1,26 @@
+// Bootstrap styles
+@import "scss/bootstrap/bootstrap.min.css";
+
+// Material styles
+@import "theme";
+
+// node plugins
+@import "../node_modules/ngx-toastr/toastr.css";
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+@import "../node_modules/perfect-scrollbar/css/perfect-scrollbar.css";
+
+// Base styles
+@import "scss/variables";
+@import "scss/fonts";
+@import "scss/mixin";
+@import "scss/extends";
+@import "scss/forms";
+@import "scss/buttons";
+@import "scss/base";
+@import "scss/common";
+@import "scss/material";
+
+// Partials styles
+@import "scss/partials/accordion";
+@import "scss/partials/modals";
+@import "scss/partials/ngx-pagination";

@@ -1,0 +1,29 @@
+@import "variables";
+
+.app-container {
+  max-width: 1440px;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+}
+
+.block-item {
+  background: $white-color;
+  box-shadow: $think-shadow;
+}
+
+.border-block {
+  border: 1px solid $border-color-2;
+  border-radius: $small-radius;
+}
+
+.flex-qrow-set {
+  display: flex;
+  flex-grow: 1;
+}
+
+.three-dots {
+  height: 2.1rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

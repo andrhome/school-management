@@ -1,0 +1,37 @@
+@import "variables";
+@import "extends";
+
+.content-filter {
+  @extend .block-item;
+  @extend .border-block;
+  display: flex;
+  align-items: center;
+  padding: .6rem 1.8rem;
+  margin-bottom: 1.2rem;
+
+  .pupils-card {
+    display: flex;
+    align-items: center;
+    max-width: 22rem;
+    margin: 0 2rem 0 0;
+
+    .pupils-img {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      margin: 0 1rem 0 0;
+      border-radius: 50%;
+      overflow: hidden;
+      background: $black-color;
+    }
+
+    .pupils-name {
+
+      min-width: 18rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 1.6rem;
+      line-height: 1.9rem;
+    }
+  }
+}

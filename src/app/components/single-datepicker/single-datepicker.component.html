@@ -1,0 +1,9 @@
+<mat-form-field floatLabel="always" appearance="outline" [ngClass]="{'no-appearance': outline === false}">
+  <input matInput [matDatepicker]="picker"
+         [value]="initialDate"
+         (dateChange)="handleDateChange($event.value._d)"
+         placeholder="Выберите дату">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+

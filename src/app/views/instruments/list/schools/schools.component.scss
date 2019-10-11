@@ -1,0 +1,9 @@
+@import "extends";
+
+:host {
+  @extend .flex-qrow-set;
+}
+
+.full-height-block{
+  position: relative;
+}

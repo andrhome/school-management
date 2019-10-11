@@ -1,0 +1,27 @@
+<div class="card">
+  <div class="card-body" *ngIf="currentItem">
+    <div class="buttons-holder">
+      <a mat-stroked-button class="btn btn-with-icon"
+         [routerLink]="'/instruments/add/' + editUrl"
+         [queryParams]="{id: currentItem.id}">
+        <svg-icon src="assets/images/svg/icons/edit-icon.svg" [svgStyle]="{'width.%': 90, 'height.%': 90, 'fill': 'currentColor'}"></svg-icon>
+      </a>
+    </div>
+    <div class="info-holder">
+      <div class="info">
+        <div class="info-row" *ngIf="currentItem.name">
+          <span class="info-row__label">Название: </span>
+          <span class="info-row__value">{{ currentItem.name }}</span>
+        </div>
+        <div class="info-row" *ngIf="currentItem.phone">
+          <span class="info-row__label">Номер телефона: </span>
+          <span class="info-row__value">{{ currentItem.phone }}</span>
+        </div>
+        <div class="info-row" *ngIf="currentItem.address">
+          <span class="info-row__label">Адрес: </span>
+          <span class="info-row__value">{{ currentItem.address }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

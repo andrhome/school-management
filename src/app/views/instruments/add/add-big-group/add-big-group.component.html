@@ -1,0 +1,95 @@
+<div class="add-form-holder container">
+  <mts-add-form-nav [title]="'К списку больших групп'" [link]="'/instruments/list/' + pluralItemsType.BIG_GROUPS"></mts-add-form-nav>
+  <div class="card">
+    <div class="card-heading">
+      <h4 class="card-title">{{updateMode ? 'Редактировать большую группу' : 'Добавить большую группу'}}</h4>
+    </div>
+    <div class="card-body">
+      <form class="add-form" [formGroup]="groupForm">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6">
+              <label class="form-group">
+                <span class="form-label">Название <small class="require-flag">*</small></span>
+                <mat-form-field floatLabel="always" appearance="outline">
+                  <input formControlName="name" matInput placeholder="" type="text">
+                </mat-form-field>
+              </label>
+            </div>
+            <div class="col-md-6">
+              <label class="form-group">
+                <span class="form-label">Возрастная категория <small class="require-flag">*</small></span>
+                <mat-form-field floatLabel="always" appearance="outline">
+                  <mat-select formControlName="ageCategory"
+                    disableOptionCentering="true" panelClass="drop-list">
+                    <mat-option *ngFor="let ageCategory of ageCategories" [value]="ageCategory.id">
+                      {{ageCategory.name}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label class="form-group">
+                <span class="form-label">Подразделение <small class="require-flag">*</small></span>
+                <mat-form-field floatLabel="always" appearance="outline">
+                  <mat-select formControlName="subdivision"
+                    disableOptionCentering="true" panelClass="drop-list">
+                    <mat-option *ngFor="let subdivision of subdivisions" [value]="subdivision.id">
+                      {{subdivision.name}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </label>
+            </div>
+            <!--<div class="col-md-6">-->
+              <!--<label class="form-group">-->
+                <!--<span class="form-label">Карта достижений <small class="require-flag">*</small></span>-->
+                <!--<mat-form-field floatLabel="always" appearance="outline">-->
+                  <!--<mat-select formControlName="achievementMap"-->
+                    <!--disableOptionCentering="true" panelClass="drop-list">-->
+                    <!--<mat-option [value]="'0000000000000000002000000'">Пусто1</mat-option>-->
+                    <!--<mat-option [value]="'0000000000000400000000000'">Пусто2</mat-option>-->
+                    <!--<mat-option [value]="'0000000000000000030000000'">Пусто3</mat-option>-->
+                    <!--<mat-option [value]="'0000000000050000000000000'">Пусто4</mat-option>-->
+                  <!--</mat-select>-->
+                <!--</mat-form-field>-->
+              <!--</label>-->
+            <!--</div>-->
+          </div>
+          <!--<div class="row">-->
+            <!--<div class="col-md-6">-->
+              <!--<label class="form-group">-->
+                <!--<span class="form-label">Карта материалов</span>-->
+                <!--<mat-form-field floatLabel="always" appearance="outline">-->
+                  <!--<mat-select formControlName="materialMap"-->
+                    <!--disableOptionCentering="true" panelClass="drop-list">-->
+                    <!--<mat-option *ngFor="let materialMap of materialMaps" [value]="materialMap.id">-->
+                      <!--{{materialMap.name}}-->
+                    <!--</mat-option>-->
+                  <!--</mat-select>-->
+                <!--</mat-form-field>-->
+              <!--</label>-->
+            <!--</div>-->
+          <!--</div>-->
+          <!--<span class="form-group">-->
+            <!--<label class="form-check">-->
+              <!--<mat-checkbox [checked]="true" formControlName="materialMapShow">Показывать карту материалов</mat-checkbox>-->
+            <!--</label>-->
+          <!--</span>-->
+          <div class="buttons-holder">
+            <button type="button" mat-flat-button color="primary"
+              (click)="submit()"
+              [disabled]="groupForm.invalid">{{ updateMode ? 'Сохранить' : 'Добавить'}}</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="loading-spinner" *ngIf="isLoading">
+      <mat-spinner></mat-spinner>
+      <div class="loading-spinner-overlay"></div>
+    </div>
+  </div>
+</div>

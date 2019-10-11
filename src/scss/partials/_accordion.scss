@@ -1,0 +1,93 @@
+@import 'variables';
+
+.accordion.mat-accordion {
+  .mat-expansion-panel {
+    box-shadow: none;
+    border-bottom: 1px solid $border-color-3;
+    border-left: 1px solid $border-color-3;
+    border-right: 1px solid $border-color-3;
+
+    &:first-child {
+      border-top: 1px solid $border-color-3;
+    }
+
+    .mat-expansion-panel-header {
+      min-height: fit-content;
+      padding: 12px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+
+      .mat-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .mat-expansion-indicator {
+        position: relative;
+        width: 10px;
+        height: 10px;
+
+        &::after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-width: 0 1px 1px 0;
+          transform: rotate(45deg);
+        }
+      }
+    }
+
+    .mat-expansion-panel-header-description {
+      flex-grow: 0;
+      justify-content: flex-end;
+      margin-right: 0;
+    }
+
+    &.mat-expanded {
+      border-top: 1px solid $border-color-3;
+
+      > .mat-expansion-panel-header {
+        border-bottom: 1px solid $border-color-3;
+      }
+
+      & + .mat-expansion-panel {
+        border-top: 1px solid $border-color-3;
+      }
+    }
+
+    .mat-expansion-panel-header-title {
+      font-size: 1.4rem;
+      line-height: 1.7rem;
+    }
+  }
+
+  &:not(.accordion--style-light) .mat-expansion-panel-body {
+    background: $gray-2;
+    padding: 0;
+  }
+
+  .training-topics-accordion-subtopics {
+    .mat-expansion-panel-body {
+      background: $white-color;
+    }
+  }
+}
+
+.mat-accordion.accordion--style-light {
+  .mat-expansion-panel-body {
+    position: relative;
+    padding: 1.6rem;
+  }
+
+  .mat-expansion-panel.mat-expanded {
+    .mat-expansion-panel-header-title {
+      color: $label-color;
+    }
+
+    > .mat-expansion-panel-header {
+      border-bottom: none;
+    }
+  }
+
+}

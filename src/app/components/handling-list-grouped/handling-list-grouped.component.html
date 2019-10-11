@@ -1,0 +1,115 @@
+<mat-accordion class="accordion">
+  <mat-expansion-panel [expanded]='true' hideToggle>
+    <mat-expansion-panel-header [collapsedHeight]="'44px'" [expandedHeight]="'44px'">
+      <mat-panel-title>
+        <span class="handling-title">Длина как сопоставление с метрикой</span>
+      </mat-panel-title>
+      <mat-panel-description>
+        <span class="colored-badge colored-badge--l colored-badge--rounded colored-badge--default">
+          <span class="colored-badge__text">1</span>
+        </span>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <ul class="p-2">
+      <li class="handling-item">
+        <p class="mb-0">Линейка</p>
+        <div class="handling-item__action" [matMenuTriggerFor]="legendMenu">
+          <span class="colored-badge colored-badge--l colored-badge--progress">
+            <span class="colored-badge__text"></span>
+          </span>
+        </div>
+      </li>
+      <li class="handling-item">
+        <p class="mb-0">Рулетка</p>
+        <div class="handling-item__action" [matMenuTriggerFor]="legendMenu">
+          <span class="colored-badge colored-badge--l colored-badge--success">
+            <span class="colored-badge__text">5555555</span>
+          </span>
+        </div>
+      </li>
+      <li class="handling-item">
+        <p class="mb-0">Портновский метр</p>
+        <div class="handling-item__action" [matMenuTriggerFor]="legendMenu">
+          <span class="colored-badge colored-badge--l colored-badge--wait">
+            <span class="colored-badge__text">99</span>
+          </span>
+        </div>
+      </li>
+      <li class="handling-item">
+        <p class="mb-0">Портновский метр</p>
+        <div class="handling-item__action" [matMenuTriggerFor]="legendMenu">
+          <span class="colored-badge colored-badge--l colored-badge--default">
+              <svg-icon src="assets/images/svg/icons/red-flag.svg"
+                        [svgStyle]="{'width.rem': 1.6, 'height.rem': 1.6}"></svg-icon>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </mat-expansion-panel>
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header [collapsedHeight]="'44px'" [expandedHeight]="'44px'">
+      <mat-panel-title>
+        <span class="handling-title">Длина. Единицы измерения</span>
+      </mat-panel-title>
+      <mat-panel-description>
+        <span class="colored-badge colored-badge--l colored-badge--rounded colored-badge--success">
+          <span class="colored-badge__text"></span>
+        </span>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <ul class="p-2">
+      <li class="handling-item">
+        <p class="mb-0">Портновский метр </p>
+        <div class="handling-item__action" [matMenuTriggerFor]="legendMenu">
+          <span class="colored-badge colored-badge--l colored-badge--success">
+            <span class="colored-badge__text">5</span>
+          </span>
+        </div>
+      </li>
+      <li class="handling-item">
+        <p class="mb-0">Рулетка</p>
+        <div class="handling-item__action" [matMenuTriggerFor]="legendMenu">
+          <span class="colored-badge colored-badge--l colored-badge--success">
+            <span class="colored-badge__text">5</span>
+          </span>
+        </div>
+      </li>
+      <li class="handling-item">
+        <p class="mb-0">Линейка</p>
+        <div class="handling-item__action" [matMenuTriggerFor]="legendMenu">
+          <span class="colored-badge colored-badge--l colored-badge--success">
+            <span class="colored-badge__text">5</span>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </mat-expansion-panel>
+</mat-accordion>
+<mat-menu #legendMenu="matMenu" class="legend-menu">
+  <a href="" mat-menu-item>
+    <span class="colored-badge colored-badge--l p-0">
+      <svg-icon src="assets/images/svg/icons/back-arrow.svg"
+                [svgStyle]="{'width.rem': 2.2, 'height.rem': 2.2}"></svg-icon>
+    </span>
+    <span class="ml-2">Отмена</span>
+  </a>
+  <a href="" mat-menu-item>
+    <span class="colored-badge colored-badge--l colored-badge--success"></span>
+    <span class="ml-2">Освоен</span>
+  </a>
+  <a href="" mat-menu-item>
+    <span class="colored-badge colored-badge--l colored-badge--wait"></span>
+    <span class="ml-2">Презентован</span>
+  </a>
+  <a href="" mat-menu-item>
+    <span class="colored-badge colored-badge--l colored-badge--progress"></span>
+    <span class="ml-2">В работе</span>
+  </a>
+  <a href="" mat-menu-item>
+    <span class="colored-badge colored-badge--l colored-badge--default">
+      <svg-icon src="assets/images/svg/icons/red-flag.svg"
+                  [svgStyle]="{'width.rem': 1.6, 'height.rem': 1.6}"></svg-icon>
+    </span>
+    <span class="ml-2">Презентация</span>
+  </a>
+</mat-menu>

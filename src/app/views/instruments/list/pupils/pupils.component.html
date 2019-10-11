@@ -1,0 +1,40 @@
+<div class="full-height-block container">
+  <h3 class="list-title">Ученики</h3>
+  <mts-list-nav [title]="'учеников'"
+                [btnText]="'ученика'"
+                [link]="'/instruments/add/' + unitItemType.PUPIL"
+                [itemsAmount]="queryParams.total"
+                [perPage]="queryParams.perPage"
+                (searchHandler)="searchPupilsHandler($event)"
+                (paginationHandler)="changePage($event)">
+    <div class="filters-holder">
+      <label class="form-group activity-filter">
+        <span class="form-label">Активность</span>
+        <mat-form-field floatLabel="always" appearance="outline">
+          <mat-select disableOptionCentering="true"
+                      panelClass="drop-list"
+                      (selectionChange)="setActivity($event.value)">
+            <mat-option value="1">Активен</mat-option>
+            <mat-option value="0">Неактивен</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </label>
+      <button mat-stroked-button color="primary"
+              class="search-btn"
+              (click)="search()">Искать</button>
+    </div>
+  </mts-list-nav>
+  <div class="content-wrap">
+    <mts-default-person-list [isPupil]="true"
+                             [itemsList]="pupils"
+                             [pageName]="unitItemType.PUPIL"
+                             [paginationParams]="queryParams"
+                             (deleteItem)="deletePupil($event)"></mts-default-person-list>
+
+    <div class="no-items-message" *ngIf="!isLoading && !pupils.length">Ученики не найдены!</div>
+    <div class="loading-spinner" *ngIf="isLoading">
+      <mat-spinner></mat-spinner>
+      <div class="loading-spinner-overlay"></div>
+    </div>
+  </div>
+</div>

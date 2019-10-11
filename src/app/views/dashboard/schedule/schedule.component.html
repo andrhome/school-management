@@ -1,0 +1,124 @@
+<header class="main-header">
+  <h3 class="main-header__title">Неделя #{{ currentWeekNumber }}</h3>
+  <div class="main-header__filter">
+    <div class="calendar-nav">
+      <button mat-stroked-button
+              mwlCalendarPreviousView
+              [(viewDate)]="viewDate"
+              [view]="view"
+              class="btn-round"
+              (click)="selectAnotherWeek(viewDate)">
+        <svg-icon src="assets/images/svg/icons/chevron-left.svg"
+                  [svgStyle]="{'width.rem': 1.4, 'height.rem': 1.4, 'margin-top.px': -3, 'margin-left.px': -2}"></svg-icon>
+      </button>
+      <span class="calendar-nav__title">
+        {{ viewDate | calendarDate:(view + 'ViewTitle'):locale:weekStartsOn }}
+      </span>
+      <button mat-stroked-button
+              mwlCalendarNextView
+              [(viewDate)]="viewDate"
+              [view]="view"
+              class="btn-round"
+              (click)="selectAnotherWeek(viewDate)">
+        <svg-icon src="assets/images/svg/icons/chevron-right.svg"
+                  [svgStyle]="{'width.rem': 1.4, 'height.rem': 1.4, 'margin-top.px': -3, 'margin-left.px': 2}"></svg-icon>
+      </button>
+    </div>
+    <button mat-stroked-button
+            mwlCalendarToday
+            [(viewDate)]="viewDate"
+            class="btn-small mr-4"
+            (click)="selectToday(viewDate)">Сегодня</button>
+    <div class="form-group groups-select" *ngIf="groups.length">
+      <mat-form-field floatLabel="always"
+                      appearance="outline"
+                      class="no-appearance">
+        <mat-select
+          disableOptionCentering="true"
+          panelClass="drop-list"
+          [value]="baseFiltersType.ALL"
+          (selectionChange)="changeGroup($event.value)">
+          <mat-option [value]="baseFiltersType.ALL">Все группы</mat-option>
+          <mat-option *ngFor="let group of groups" [value]="group.id">{{ group.name }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <button mat-button class="btn-icon">
+    <svg-icon src="assets/images/svg/icons/print.svg" [svgStyle]="{'width.%': 80, 'height.%': 80, 'fill': 'currentColor'}"></svg-icon>
+  </button>
+</header>
+<section class="shedule-calendar">
+  <mwl-calendar-week-view
+    [viewDate]="viewDate"
+    [events]="events"
+    [locale]="locale"
+    [weekStartsOn]="weekStartsOn"
+    [weekendDays]="weekendDays"
+    [headerTemplate]="weekHeaderTemplate"
+    [hourSegmentTemplate]="weekViewHourSegment"
+    [hourSegments]="hourSegments"
+    [hourSegmentHeight]="hourSegmentHeight"
+    [dayStartHour]="dayStartHour"
+    [dayEndHour]="dayEndHour"
+    (eventClicked)="eventClicked($event.event)"
+    (eventTimesChanged)="eventTimesChanged($event)"
+  >
+  </mwl-calendar-week-view>
+  <div class="loading-spinner" *ngIf="isLoading">
+    <mat-spinner></mat-spinner>
+    <div class="loading-spinner-overlay"></div>
+  </div>
+</section>
+
+<ng-template
+  #weekHeaderTemplate
+  let-days="days"
+  let-locale="locale"
+  let-dayHeaderClicked="dayHeaderClicked"
+>
+  <div class="cal-day-headers">
+    <div
+      class="cal-header"
+      *ngFor="let day of days"
+      [class.cal-past]="day.isPast"
+      [class.cal-today]="day.isToday"
+      [class.cal-future]="day.isFuture"
+      [class.cal-weekend]="day.isWeekend"
+      (click)="dayHeaderClicked.emit({day: day})"
+    >
+      <p>{{ day.date | calendarDate:'weekViewColumnSubHeader':locale }}</p>
+      <b>{{ day.date | calendarDate:'weekViewColumnHeader':locale }}</b>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template
+  #weekViewHourSegment
+  let-segment="segment"
+  let-locale="locale"
+  let-segmentHeight="segmentHeight"
+  let-isTimeLabel="isTimeLabel"
+>
+  <div
+    #segmentElement
+    class="cal-hour-segment"
+    [style.height.px]="segmentHeight"
+    [class.cal-hour-start]="segment.isStart"
+    [class.cal-after-hour-start]="!segment.isStart"
+    [ngClass]="segment.cssClass"
+    (mousedown)="startDragToCreate(segment, $event, segmentElement)"
+  >
+    <div class="cal-time" *ngIf="isTimeLabel">
+      {{ segment.date | calendarDate: 'weekViewHour':locale }}
+    </div>
+  </div>
+</ng-template>
+
+<ng-template
+  #weekEventTemplate>
+  <h1>event</h1>
+</ng-template>
+
+
+

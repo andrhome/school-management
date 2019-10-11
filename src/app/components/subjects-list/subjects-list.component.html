@@ -1,0 +1,5 @@
+<ul class="lessons-nav default-list default-list--sm">
+  <li *ngFor="let subject of subjects">
+    <button class="default-list__link" [ngClass]="{'active': subject.id === activeSubject.id}" (click)="setActiveSubject(subject)">{{ subject.name }}</button>
+  </li>
+</ul>

@@ -1,0 +1,29 @@
+@import "mixin";
+
+:host {
+  height: 100%;
+}
+
+.card {
+  height: 100%;
+
+  .buttons-holder {
+    @include flex-box(row, flex-end, center);
+    margin: 0;
+  }
+}
+
+.photo-block {
+  width: 32rem;
+  min-width: 32rem;
+  height: 32rem;
+  background-size: cover;
+  margin-right: 3rem;
+
+  @include media-max-screen($tablet-2) {
+    width: 20rem;
+    min-width: 20rem;
+    height: 20rem;
+    margin: 0 0 3rem;
+  }
+}

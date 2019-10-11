@@ -1,0 +1,35 @@
+<div class="login">
+  <div class="container">
+    <h1 class="login__title text-center">Добро пожаловать!</h1>
+    <div class="login__form-holder">
+      <div class="login__img">
+        <img src="/assets/images/no-photo.png" alt="No photo">
+      </div>
+      <form class="login__form" [formGroup]="loginForm">
+        <label class="form-group">
+          <span class="form-label">Email <small class="require-flag">*</small></span>
+          <input type="email"
+                 class="form-control"
+                 formControlName="email">
+          <span class="invalid-message">Поле Email обязательное и должно быть валидным</span>
+        </label>
+        <label class="form-group">
+          <span class="form-label">Пароль <small class="require-flag">*</small></span>
+          <input type="password"
+                 class="form-control"
+                 formControlName="password">
+          <span class="invalid-message">Это поле обязательное</span>
+        </label>
+        <button type="submit"
+                class="btn btn-primary"
+                [disabled]="loginForm.invalid"
+                (click)="submit()">Войти</button>
+      </form>
+    </div>
+  </div>
+  <div class="loading-spinner" *ngIf="isLoading">
+    <mat-spinner></mat-spinner>
+    <div class="loading-spinner-overlay"></div>
+  </div>
+</div>
+

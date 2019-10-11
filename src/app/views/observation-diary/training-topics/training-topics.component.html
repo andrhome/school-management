@@ -1,0 +1,75 @@
+<div>
+  <mts-content-block-header [showSubjectName]="true"></mts-content-block-header>
+  <div class="inner-block">
+    <div class="inner-block__navigation">
+      <mts-subjects-list></mts-subjects-list>
+    </div>
+    <div class="inner-block__content d-flex">
+      <div class="mw-430 mr-3">
+        <input class="training-topics-search" placeholder="Поиск по теме">
+        <mat-accordion class="accordion">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header [collapsedHeight]="'44px'" [expandedHeight]="'44px'">
+              <mat-panel-title>
+                Тема занятий
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="p-4">
+              <mat-accordion class="training-topics-accordion-subtopics">
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header [collapsedHeight]="'44px'" [expandedHeight]="'44px'">
+                    <mat-panel-title>
+                      Подтема занятий
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <div class="p-4">
+                    <p class="training-topics-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id cursus eros. Duis dui neque, vestibulum sagittis nunc sit amet, fermentum fermentum odio. Suspendisse et sagittis sem, at sagittis magna. Praesent efficitur placerat rutrum. Nullam sodales interdum leo id dapibus. Duis sit amet enim ex. Etiam vestibulum, erat non sagittis faucibus, ante arcu cursus tellus, id feugiat tortor sem id enim. Nulla sit amet nisl eget sem facilisis aliquet eget quis nibh.</p>
+                    <div class="control-block">
+                      <time class="control-block__text">16.04.19</time>
+                      <span>&bull;</span>
+                      <button mat-button class="control-block__edit btn-link" title="Pедактировать">редактировать</button>
+                      <span>&bull;</span>
+                      <button mat-button class="control-block__delete btn-link" title="Удалить">удалить</button>
+                    </div>
+                  </div>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header [collapsedHeight]="'44px'" [expandedHeight]="'44px'">
+                    This is the expansion title
+                  </mat-expansion-panel-header>
+                  <mat-panel-description>
+                    This is a summary of the content
+                  </mat-panel-description>
+                  <div class="p-4">
+                    <!--content here-->
+                  </div>
+                </mat-expansion-panel>
+              </mat-accordion>
+            </div>
+          </mat-expansion-panel>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header [collapsedHeight]="'44px'" [expandedHeight]="'44px'">
+              <mat-panel-title>
+                Self aware panel
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="p-4">
+              <p>I'm visible because I am open</p>
+            </div>
+          </mat-expansion-panel>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header [collapsedHeight]="'44px'" [expandedHeight]="'44px'">
+              <mat-panel-title>
+                Self aware panel
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="p-4">
+              <p>I'm visible because I am open</p>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+      <mts-pupils-nav *ngIf="groupView"></mts-pupils-nav>
+    </div>
+  </div>
+</div>

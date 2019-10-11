@@ -1,0 +1,18 @@
+<div class="notice">
+  <svg-icon class="notice__icon" [src]="'assets/images/svg/icons/' + notice.type + '.svg'"
+            [svgStyle]="{'width.px': 20}"></svg-icon>
+  <div class="notice__text">
+    <ng-container *ngIf="notice.topic">
+      <p >{{ notice.text }} «{{ notice.topic.name }}»</p>
+      <button mat-stroked-button color="primary" class="btn-small notice-action">Перенести</button>
+    </ng-container>
+    <ng-container *ngIf="notice.birthdayPerson">
+      <p >{{ notice.text }} <a href="#">{{ notice.birthdayPerson.name }}</a></p>
+    </ng-container>
+
+  </div>
+  <button mat-button class="btn-icon btn-icon--s" (click)="removeNotice(notice)">
+    <svg-icon src="assets/images/svg/icons/close-icon.svg"
+              [svgStyle]="{'width.%': 100, 'height.%': 100, 'fill': 'currentColor'}"></svg-icon>
+  </button>
+</div>

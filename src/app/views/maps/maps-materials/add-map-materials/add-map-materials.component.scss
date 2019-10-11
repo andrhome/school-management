@@ -1,0 +1,43 @@
+@import "src/scss/extends";
+@import "src/scss/mixin";
+
+:host {
+  @extend .flex-qrow-set;
+}
+
+.add-map-materials {
+  .buttons-holder {
+    margin-top: 3rem;
+  }
+}
+
+.add-zone {
+  &__fields {
+    margin-bottom: 2rem;
+  }
+
+  .buttons-set {
+    @include flex-box(row, flex-end, center);
+    max-height: 8.4rem;
+    margin-top: 3px;
+
+    .btn {
+      &:not(:last-child) {
+        margin-right: 1.5rem;
+      }
+    }
+  }
+}
+
+.zone-row {
+  border-bottom: 1px solid $border-color-2;
+  margin-bottom: 2rem;
+}
+
+.subjects-holder {
+  width: 100%;
+
+  .row {
+    margin: 0;
+  }
+}

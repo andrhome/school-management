@@ -1,0 +1,83 @@
+<div class="add-form-holder container">
+  <mts-add-form-nav [title]="'К списку возрастных категорий'" [link]="'/instruments/list/' + pluralItemsType.AGE_CATEGORIES"></mts-add-form-nav>
+  <div class="card">
+    <div class="card-heading">
+      <h4 class="card-title">{{ updateMode ? 'Редактировать' : 'Добавить'}} возрастную категорию</h4>
+    </div>
+    <div class="card-body">
+      <form class="add-form" [formGroup]="ageCategoryForm">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6">
+              <label class="form-group">
+                <span class="form-label">Название возрастной категории <small class="require-flag">*</small></span>
+                <mat-form-field floatLabel="always" appearance="outline">
+                  <input formControlName="name" matInput placeholder="" type="text">
+                </mat-form-field>
+              </label>
+            </div>
+            <div class="col-md-6">
+              <label class="form-group">
+                <span class="form-label">Активность <small class="require-flag">*</small></span>
+                <mat-form-field floatLabel="always" appearance="outline">
+                  <mat-select formControlName="active" disableOptionCentering="true"
+                              panelClass="drop-list">
+                    <mat-option [value]="true">Активна</mat-option>
+                    <mat-option [value]="false">Неактивна</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label class="form-group">
+                <span class="form-label">От (лет) <small class="require-flag">*</small></span>
+                <mat-form-field floatLabel="always" appearance="outline">
+                  <input formControlName="fromAge" matInput type="number">
+                </mat-form-field>
+              </label>
+            </div>
+            <div class="col-md-6">
+              <label class="form-group">
+                <span class="form-label">До (лет) <small class="require-flag">*</small></span>
+                <mat-form-field floatLabel="always" appearance="outline">
+                  <input formControlName="toAge" matInput type="number">
+                </mat-form-field>
+              </label>
+            </div>
+          </div>
+
+
+          <!--<label class="form-group">-->
+          <!--<span class="form-label">Следующая возрастная категория <small class="require-flag">*</small></span>-->
+          <!--<select class="form-control">-->
+          <!--<option value="578674fb215ae0a0038b456b">Ранний возраст</option>-->
+          <!--<option value="57867515215ae0a0038b456c">Самостоятельные дети</option>-->
+          <!--<option value="57867539215ae0a0038b456d">Дошкольники</option>-->
+          <!--<option value="57867550215ae0a0038b456e">Школьники I ступень</option>-->
+          <!--<option value="57867561215ae0a0038b456f">Школьники II ступень</option>-->
+          <!--<option value="5786757a215ae0a0038b4570">Школьники III ступень</option>-->
+          <!--<option value="5c7f96ad033bf2a7198b4568">Экстернат - IV ступень</option>-->
+          <!--<option value="5c8775c9033bf2f60d8b458b">Студент</option>-->
+          <!--</select>-->
+          <!--</label>-->
+
+          <div class="buttons-holder">
+            <button mat-flat-button color="primary"
+                    type="button"
+                    [disabled]="ageCategoryForm.invalid"
+                    (click)="submit()">
+              {{ updateMode ? 'Сохранить' : 'Добавить'}}
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="loading-spinner" *ngIf="isLoading">
+      <mat-spinner></mat-spinner>
+      <div class="loading-spinner-overlay"></div>
+    </div>
+  </div>
+</div>

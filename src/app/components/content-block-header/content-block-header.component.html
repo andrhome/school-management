@@ -1,0 +1,84 @@
+<div class="content-block-header">
+  <div class="content-block-header__filters">
+    <h5 *ngIf="!hideTitle" class="content-block-header__title">{{ title }} <ng-container *ngIf="defaultSubjectId && showSubjectName"> - {{ defaultSubjectName }}</ng-container>
+    </h5>
+
+    <div *ngIf="showSubjectsFilter && subjects.length" class="subjects-filter form-group">
+      <mat-form-field floatLabel="always" appearance="outline" class="no-appearance">
+        <mat-select [(ngModel)]="defaultSubjectId" disableOptionCentering="true" panelClass="drop-list" (selectionChange)="onSubjectsFilterChange($event.value)">
+          <mat-option *ngFor="let subject of subjects" [value]="subject.id">
+            {{ subject.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div *ngIf="showTeachersFilter && teachers.length" class="teachers-filter form-group">
+      <mat-form-field floatLabel="always" appearance="outline" class="no-appearance">
+        <mat-select [(ngModel)]="defaultTeacherId" disableOptionCentering="true" panelClass="drop-list" (selectionChange)="onTeacherFilterChange($event.value)">
+          <mat-option [value]="-1">
+            Все учителя (админы)
+          </mat-option>
+          <mat-option *ngFor="let teacher of teachers" [value]="teacher.id">
+            {{ teacher.firstName }} {{ teacher.lastName }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <ul *ngIf="showNotesTypeFilter" class="default-list default-list--inline default-list--sm">
+      <li>
+        <button class="default-list__link"
+                [ngClass]="{'active': typeFilter === notesType.ALL}"
+                (click)="onTypeFilterChange(notesType.ALL)">Все</button>
+      </li>
+      <li>
+        <button class="default-list__link"
+                [ngClass]="{'active': typeFilter === notesType.PEDAGOGICAL}"
+                (click)="onTypeFilterChange(notesType.PEDAGOGICAL)">Педагогические заметки</button>
+      </li>
+      <li>
+        <button class="default-list__link"
+                [ngClass]="{'active': typeFilter === notesType.OBSERVATION}"
+                (click)="onTypeFilterChange(notesType.OBSERVATION)">Наблюдения</button>
+      </li>
+    </ul>
+
+  </div>
+
+  <ul class="content-block-header__nav">
+    <li *ngIf="showAddAction">
+      <button mat-stroked-button color="primary" class="btn-small" (click)="addNew()">Добавить</button>
+    </li>
+    <li>
+      <button mat-button class="btn-icon">
+        <svg-icon src="assets/images/svg/icons/print.svg" [svgStyle]="{'width.rem': 1.6, 'height.rem': 1.6, 'fill': 'currentColor'}"></svg-icon>
+      </button>
+    </li>
+    <li *ngIf="!hideLegend">
+      <button mat-button
+              class="btn-small"
+              [matMenuTriggerFor]="legendMenu">Легенда</button>
+      <mat-menu #legendMenu="matMenu" class="legend-menu">
+        <a href="" mat-menu-item>
+          <i class="icon">
+            <svg-icon src="assets/images/svg/icons/red-flag.svg" [svgStyle]="{'width.rem': 1.7, 'height.rem': 1.7}"></svg-icon>
+          </i>
+          <span>Презентация запланирована</span>
+        </a>
+        <a href="" mat-menu-item>
+          <i class="circle circle--yellow"></i>
+          <span>Материал презентован</span>
+        </a>
+        <a href="" mat-menu-item>
+          <i class="circle circle--green"></i>
+          <span>Материал в работе</span>
+        </a>
+        <a href="" mat-menu-item>
+          <i class="circle circle--blue"></i>
+          <span>Материал освоен</span>
+        </a>
+      </mat-menu>
+    </li>
+  </ul>
+</div>

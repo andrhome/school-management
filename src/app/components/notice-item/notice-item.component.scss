@@ -1,0 +1,50 @@
+@import "variables";
+:host {
+  display: block;
+
+  &:not(:last-child) {
+    margin-bottom: 1.2rem;
+  }
+}
+
+.notice {
+  display: flex;
+  padding: .8rem 1.4rem;
+  border: 1px solid $border-color-2;
+  border-radius: $small-radius;
+  cursor: pointer;
+  transition: background-color .3s;
+
+  &__icon {
+    flex-shrink: 0;
+    align-self: flex-start;
+    color: $black-color;
+  }
+
+  &__text {
+    flex-grow: 1;
+    max-height: 150px;
+    margin: 0 1.4rem;
+    font-size: 1.4rem;
+    line-height: 1.21;
+    overflow-y: auto;
+
+    p {
+      overflow-x: hidden;
+      text-overflow: ellipsis;
+
+    }
+  }
+
+  &-action {
+    display: none;
+  }
+
+  &:hover {
+    background-color: $border-color-2;
+
+    .notice-action {
+      display: flex;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+<mat-accordion class="accordion accordion--style-light">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header [collapsedHeight]="'44px'" [expandedHeight]="'44px'">
+      <mat-panel-title>
+        Запланировать тему
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <form class="form-sidebar" [formGroup]="newTopicForm">
+
+      <label class="form-group mb-3">
+        <mat-form-field floatLabel="always" appearance="outline" class="no-appearance">
+          <mat-select formControlName="ageCategories"
+                      placeholder="Выберите категорию"
+                      disableOptionCentering="true"
+                      panelClass="drop-list">
+            <mat-option *ngFor="let category of ageCategories" [value]="category?.id">
+              {{ category?.name }} {{ category.fromAge }} - {{ category.toAge }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </label>
+      <div class="form-group mb-3">
+        <div class="dates-range dates-range--hide-icon dates-range--hide-outline">
+          <mts-single-datepicker [outline]="false" (selectDate)="changeStartDate($event)"></mts-single-datepicker>
+          <span class="dates-range__divider"> - </span>
+          <mts-single-datepicker [outline]="false" (selectDate)="changeEndDate($event)"></mts-single-datepicker>
+        </div>
+      </div>
+      <div class="form-group mb-5">
+        <mat-form-field floatLabel="always" appearance="outline">
+          <input formControlName="name" matInput placeholder="" type="text">
+        </mat-form-field>
+      </div>
+      <button mat-flat-button
+              color="primary"
+              type="button"
+              [disabled]="newTopicForm.invalid"
+              (click)="onSave()">
+        Запланировать
+      </button>
+      <div class="loading-spinner" *ngIf="isLoading">
+        <mat-spinner></mat-spinner>
+        <div class="loading-spinner-overlay"></div>
+      </div>
+    </form>
+  </mat-expansion-panel>
+</mat-accordion>

@@ -1,0 +1,33 @@
+<div class="modal-panel modal-panel--small">
+  <header class="modal-panel__header mod-header">
+    <div class="mod-header__actions">
+      <button mat-button class="btn-icon" (click)="onClose()" tabindex="-1">
+        <svg-icon src="assets/images/svg/icons/close-icon.svg" [svgStyle]="{'width.%': 100, 'height.%': 100, 'fill': 'currentColor'}"></svg-icon>
+      </button>
+    </div>
+    <h4 class="content-block-title">Сохранение группы уроков</h4>
+  </header>
+  <section class="modal-panel__body">
+    <div class="form-group">
+      <span class="form-label">Диапазон сохраняемых уроков</span>
+      <div class="dates-range">
+        <mts-single-datepicker [initialDate]="lessonsSetForm.get('startDate').value"
+                               (selectDate)="handleDateStart($event)"></mts-single-datepicker>
+        <span class="dates-range__divider"> - </span>
+        <mts-single-datepicker [initialDate]="lessonsSetForm.get('endDate').value"
+                               (selectDate)="handleDateEnd($event)"></mts-single-datepicker>
+      </div>
+    </div>
+  </section>
+  <footer class="modal-panel__footer">
+    <button mat-flat-button
+            color="primary"
+            type="button"
+            [disabled]="lessonsSetForm.invalid"
+            (click)="saveLessons()">Сохранить</button>
+  </footer>
+  <div class="loading-spinner" *ngIf="isLoading">
+    <mat-spinner></mat-spinner>
+    <div class="loading-spinner-overlay"></div>
+  </div>
+</div>

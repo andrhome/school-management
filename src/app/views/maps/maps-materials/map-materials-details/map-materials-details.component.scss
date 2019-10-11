@@ -1,0 +1,83 @@
+@import "extends";
+
+:host {
+  @extend .flex-qrow-set;
+}
+
+.map-materials-holder {
+  font-size: 1.6rem;
+  padding: 0 3rem 3rem;
+}
+
+.material-tree-holder {
+  margin-top: 3rem;
+
+  .subtitle {
+    color: $text-color-4;
+  }
+
+  .mat-tree {
+    font-size: 1.6rem;
+
+    ul {
+      background: lighten($gray-2, 1%);
+    }
+
+    & > .mat-nested-tree-node {
+      & > li {
+        & > ul {
+          border: 1px solid $border-color-2;
+          border-radius: 0 0 $small-radius $small-radius;
+        }
+      }
+    }
+
+    .mat-tree-node,
+    .mat-nested-tree-node {
+      font-family: $base-font;
+      font-size: 1.6rem;
+
+      strong {
+        font-weight: $semi-bold;
+      }
+    }
+
+    mat-tree-node {
+      &.material {
+        min-height: 36px;
+
+        .mat-tree-node {
+          min-height: 36px;
+          font-size: 1.4rem;
+        }
+
+        .mat-icon-button {
+          height: 36px;
+        }
+      }
+    }
+
+    .material-text {
+      color: $text-color-4;
+    }
+
+    .mat-icon {
+      height: 2.6rem;
+      width: 2.6rem;
+      line-height: 2.6rem;
+      font-size: 2.6rem;
+    }
+  }
+
+  .zone {
+    box-shadow: $dropdown-shadow;
+    border-radius: $small-radius;
+    margin-top: 1.5rem;
+  }
+
+  .label-text {
+    display: inline-block;
+    color: $text-color-3;
+    margin-right: 5px;
+  }
+}

@@ -1,0 +1,14 @@
+<div class="user-block" *ngIf="user && user.id">
+  <button mat-button
+          type="button"
+          class="user-block__btn"
+          [matMenuTriggerFor]="menu">
+    <span class="user-block__name">{{ user.lastName }} {{ user.firstName }}</span>
+    <span class="user-block__photo">
+      <img src="assets/images/no-photo.png" alt="User photo">
+    </span>
+  </button>
+  <mat-menu #menu="matMenu" xPosition="before">
+    <button mat-menu-item (click)="logout()">Выйти</button>
+  </mat-menu>
+</div>

@@ -1,0 +1,8 @@
+<div class="content-filter">
+  <mts-pupils-groups-filter></mts-pupils-groups-filter>
+  <figure class="pupils-card" *ngIf="!groupView && currentPupil">
+    <img class="pupils-img" src="assets/images/no-photo.png" alt="Pupil photo" />
+    <figcaption class="pupils-name">{{ currentPupil.firstName }} {{ currentPupil.lastName }}</figcaption>
+  </figure>
+  <mts-data-calendar *ngIf="groupView || currentPupil"></mts-data-calendar>
+</div>

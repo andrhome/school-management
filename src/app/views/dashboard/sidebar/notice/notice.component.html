@@ -1,0 +1,15 @@
+<mat-accordion class="accordion accordion--style-light">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header [collapsedHeight]="'44px'" [expandedHeight]="'44px'">
+      <mat-panel-title>
+        <span>Уведомления</span>
+        <span *ngIf="notices?.length" class="colored-badge colored-badge--rounded colored-badge--success ml-3"><span class="colored-badge__text">{{ notices?.length }}</span></span>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mts-notices-list [notices]="notices" (removeNoticeEvent)="removeNotice($event)"></mts-notices-list>
+    <div class="loading-spinner loading-spinner--s" *ngIf="isLoading">
+      <mat-spinner></mat-spinner>
+      <div class="loading-spinner-overlay"></div>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>

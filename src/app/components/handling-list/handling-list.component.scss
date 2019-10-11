@@ -1,0 +1,27 @@
+@import "variables";
+
+.handling-list {
+  max-width: 320px;
+  border-radius: $small-radius;
+  border: 1px solid $border-color-3;
+  font-size: 1.4rem;
+  line-height: 1.21;
+  overflow: hidden;
+
+  &__button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1.4rem 1.2rem;
+    border: none;
+    color: $text-color-4;
+    background-color: $white-color;
+    text-align: left;
+
+    &:hover, &.active {
+      color: $black-color;
+      background-color: $hover-color;
+    }
+  }
+}

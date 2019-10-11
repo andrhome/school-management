@@ -1,0 +1,46 @@
+@import 'variables';
+@import "../../../scss/mixin";
+
+.single-datepicker {
+  ::ng-deep {
+    .mat-form-field-appearance-legacy {
+      .mat-form-field-infix {
+        color: $black-color;
+        border: 0;
+        padding: 1.25rem .5rem 1.25rem 1.5rem;
+      }
+
+      .mat-form-field {
+        color: $black-color;
+      }
+
+      .mat-form-field-prefix,
+      .mat-form-field-suffix {
+        font-size: 1.8rem;
+        margin-right: .5rem;
+      }
+
+      .mat-form-field-label-wrapper {
+        top: inherit;
+        padding-top: 0;
+      }
+
+      .mat-form-field-wrapper {
+        border: 1px solid $border-color;
+        border-radius: $small-radius;
+        padding: 0;
+      }
+
+      .mat-form-field-underline,
+      .mat-form-field-ripple {
+        display: none;
+      }
+
+      .mat-form-field-label {
+        color: $label-color;
+        padding-left: 1.2rem;
+        top: inherit;
+      }
+    }
+  }
+}

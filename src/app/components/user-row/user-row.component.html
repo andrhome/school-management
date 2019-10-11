@@ -1,0 +1,4 @@
+<div class="user-row__avatar"
+     [ngStyle]="{'background-image': user.photo ? 'url('+ user.photo +')' : photoPlaceholder}">
+</div>
+<span class="user-row__name">{{ user.firstName }} {{ user.lastName }}</span>

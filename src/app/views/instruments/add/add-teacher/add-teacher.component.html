@@ -1,0 +1,179 @@
+<div class="add-form-holder container">
+  <mts-add-form-nav [title]="'К списку учитилей'" [link]="'/instruments/list/' + pluralItemsType.TEACHERS"></mts-add-form-nav>
+  <div class="card">
+    <div class="card-heading">
+      <h4 class="card-title">{{updateMode ? 'Редактировать учителя' : 'Добавить учителя'}}</h4>
+    </div>
+    <div class="card-body">
+      <form class="add-form" [formGroup]="teacherForm">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6">
+              <label class="form-group">
+                <span class="form-label">Фамилия <small class="require-flag">*</small></span>
+                <mat-form-field floatLabel="always" appearance="outline">
+                  <input formControlName="lastName" matInput placeholder="" type="text">
+                </mat-form-field>
+              </label>
+              <label class="form-group">
+                <span class="form-label">Имя <small class="require-flag">*</small></span>
+                <mat-form-field floatLabel="always" appearance="outline">
+                  <input formControlName="firstName" matInput placeholder="" type="text">
+                </mat-form-field>
+              </label>
+              <label class="form-group">
+                <span class="form-label">Email <small class="require-flag">*</small></span>
+                <mat-form-field floatLabel="always" appearance="outline">
+                  <input formControlName="email" matInput placeholder="" type="email">
+                </mat-form-field>
+              </label>
+              <label class="form-group" *ngIf="!updateMode">
+                <span class="form-label">Пароль <small class="require-flag">*</small></span>
+                <mat-form-field floatLabel="always" appearance="outline">
+                  <input formControlName="plainPassword" matInput placeholder="" type="password">
+                </mat-form-field>
+              </label>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="form-group photo-upload">
+                <span class="form-label">Фото:</span>
+                <div class="photo-upload__preview"
+                     [style.backgroundImage]="'url(' + getAvatarUrl() + ')'"
+                     (click)="inputPhoto.click()"
+                ></div>
+                <button type="button" mat-stroked-button color="primary" (click)="inputPhoto.click()">Загрузить / изменить фото</button>
+                <input (change)="onAvatarChange($event)" #inputPhoto type="file" class="photo-upload__input">
+              </div>
+            </div>
+          </div>
+<!--          <div class="row">-->
+<!--            <div class="col-md-6">-->
+<!--              <label class="form-group">-->
+<!--                <span class="form-label">Отчество <small class="require-flag">*</small></span>-->
+<!--                <mat-form-field floatLabel="always" appearance="outline">-->
+<!--                  <input formControlName="patronymic" matInput placeholder="" type="text">-->
+<!--                </mat-form-field>-->
+<!--              </label>-->
+<!--            </div>-->
+<!--            <div class="col-md-6">-->
+<!--              <label class="form-group">-->
+<!--                <span class="form-label">Пол <small class="require-flag">*</small></span>-->
+<!--                <mat-form-field floatLabel="always" appearance="outline">-->
+<!--                  <mat-select formControlName="ageCategory"-->
+<!--                              disableOptionCentering="true" panelClass="drop-list">-->
+<!--                    <mat-option value="male">Мужской</mat-option>-->
+<!--                    <mat-option value="female">Женский</mat-option>-->
+<!--                  </mat-select>-->
+<!--                </mat-form-field>-->
+<!--              </label>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="row">-->
+<!--            <div class="col-md-6">-->
+<!--              <div class="form-group">-->
+<!--                <span class="form-label">Дата рождения <small class="require-flag">*</small></span>-->
+<!--                <mts-single-datepicker formControlName="dateOfBirth"></mts-single-datepicker>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="col-md-6">-->
+<!--              <div class="form-group">-->
+<!--                <span class="form-label">Дата вступления в МШМ <small class="require-flag">*</small></span>-->
+<!--                <mts-single-datepicker formControlName="dateMsh"></mts-single-datepicker>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="row">-->
+<!--            <div class="col-md-6">-->
+<!--              <div class="form-group">-->
+<!--                <span class="form-label">Фото (200 x 300)</span>-->
+<!--                <input type="file" formControlName="photo">-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="col-md-6">-->
+<!--              <label class="form-group">-->
+<!--                <span class="form-label">Номер телефона (только цифры, например 79051234567)</span>-->
+<!--                <mat-form-field floatLabel="always" appearance="outline">-->
+<!--                  <input formControlName="phone" matInput placeholder="" type="number">-->
+<!--                </mat-form-field>-->
+<!--              </label>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="row">-->
+<!--            <div class="col-md-6">-->
+<!--              <label class="form-group">-->
+<!--                <span class="form-label">Адрес</span>-->
+<!--                <mat-form-field floatLabel="always" appearance="outline">-->
+<!--                  <input formControlName="address" matInput placeholder="" type="text">-->
+<!--                </mat-form-field>-->
+<!--              </label>-->
+<!--            </div>-->
+<!--            <div class="col-md-6">-->
+<!--              <label class="form-group">-->
+<!--                <span class="form-label">Активность <small class="require-flag">*</small></span>-->
+<!--                <mat-form-field floatLabel="always" appearance="outline">-->
+<!--                  <mat-select formControlName="activity"-->
+<!--                              disableOptionCentering="true" panelClass="drop-list">-->
+<!--                    <mat-option value="active">Активен</mat-option>-->
+<!--                    <mat-option value="not active">Неактивен</mat-option>-->
+<!--                  </mat-select>-->
+<!--                </mat-form-field>-->
+<!--              </label>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="row">-->
+<!--            <div class="col-md-6">-->
+<!--              <label class="form-group">-->
+<!--                <span class="form-label">Категория <small class="require-flag">*</small></span>-->
+<!--                <mat-form-field floatLabel="always" appearance="outline">-->
+<!--                  <mat-select formControlName="ageCategory"-->
+<!--                              disableOptionCentering="true" panelClass="drop-list">-->
+<!--                    <mat-option *ngFor="let ageCategory of ageCategories" [value]="ageCategory.id">-->
+<!--                      {{ageCategory.name}}-->
+<!--                    </mat-option>-->
+<!--                  </mat-select>-->
+<!--                </mat-form-field>-->
+<!--              </label>-->
+<!--            </div>-->
+<!--            <div class="col-md-6">-->
+<!--              <label class="form-group">-->
+<!--                <span class="form-label">Подразделение <small class="require-flag">*</small></span>-->
+<!--                <mat-form-field floatLabel="always" appearance="outline">-->
+<!--                  <mat-select formControlName="subdivision"-->
+<!--                              disableOptionCentering="true" panelClass="drop-list">-->
+<!--                    <mat-option *ngFor="let subdivision of subdivisions" [value]="subdivision.id">-->
+<!--                      {{subdivision.name}}-->
+<!--                    </mat-option>-->
+<!--                  </mat-select>-->
+<!--                </mat-form-field>-->
+<!--              </label>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="row">-->
+<!--            <div class="col-md-6">-->
+<!--              <label class="form-group">-->
+<!--                <span class="form-label">Большая группа <small class="require-flag">*</small></span>-->
+<!--                <mat-form-field floatLabel="always" appearance="outline">-->
+<!--                  <mat-select formControlName="group"-->
+<!--                              disableOptionCentering="true" panelClass="drop-list">-->
+<!--                    <mat-option *ngFor="let group of groups" [value]="group.id">-->
+<!--                      {{group.name}}-->
+<!--                    </mat-option>-->
+<!--                  </mat-select>-->
+<!--                </mat-form-field>-->
+<!--              </label>-->
+<!--            </div>-->
+<!--          </div>-->
+          <div class="buttons-holder">
+            <button type="button" mat-flat-button color="primary"
+                    (click)="submit()"
+                    [disabled]="teacherForm.invalid">{{ updateMode ? 'Сохранить' : 'Добавить'}}</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="loading-spinner" *ngIf="isLoading">
+    <mat-spinner></mat-spinner>
+    <div class="loading-spinner-overlay"></div>
+  </div>
+</div>

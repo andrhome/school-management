@@ -1,0 +1,40 @@
+<div>
+  <mts-content-block-header></mts-content-block-header>
+  <div class="progress-block">
+    <h2 class="progress-block__title">Распределение по зонам</h2>
+    <div class="clearfix">
+      <mat-checkbox class="float-right" [checked]="showPlan" (change)="changePlanStatus($event)">Процент по плану</mat-checkbox>
+    </div>
+    <div *ngFor="let item of lessonsProgress" class="progress-block__row">
+      <div class="progress-key">{{ item.name }}</div>
+      <div class="progress-bar-wrap">
+        <div class="progress-line" [ngStyle]="{'min-width.%': item.progressValue, 'background-color': item.color}">
+          <span class="progress-line__value">{{ item.progressValue }}</span>
+          <span class="progress-line__value progress-line__value--lighten">{{ item.progressPercent }}%</span>
+        </div>
+        <div *ngIf="showPlan" class="progress-line progress-line--thin" [ngStyle]="{'min-width.%': item.progressPercent, 'background-color': item.color}">
+          <span class="progress-line__value">{{ item.progressPlan }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="inner-block">
+    <div class="inner-block__navigation">
+      <mts-subjects-list></mts-subjects-list>
+    </div>
+    <div class="inner-block__content d-flex">
+      <div class="mr-3">
+        <mts-handling-list class="flex-grow-1"></mts-handling-list>
+        <div class="handling-grouped">
+          <div class="handling-grouped__checkbox multiline">
+            <mat-checkbox>Только активные материалы</mat-checkbox>
+          </div>
+          <div class="handling-grouped__list">
+            <mts-handling-list-grouped></mts-handling-list-grouped>
+          </div>
+        </div>
+      </div>
+      <mts-pupils-nav *ngIf="groupView"></mts-pupils-nav>
+    </div>
+  </div>
+</div>

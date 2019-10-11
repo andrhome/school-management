@@ -1,0 +1,62 @@
+.pagination-holder {
+  min-height: 4.6rem;
+  border-top: 1px solid $border-color-2;
+  margin: 0 -1.5rem;
+
+  .ngx-pagination {
+    @include flex-box(row, center, center);
+    font-family: $base-font;
+    font-size: 1.6rem;
+    margin-bottom: 0;
+
+    li {
+      width: 3rem;
+      height: 3rem;
+      padding: 0;
+
+      &.current {
+        padding: 0;
+      }
+
+      & > span, a {
+        width: 3rem;
+        display: inline-block;
+        text-align: center;
+        line-height: 1;
+        padding: .8rem 0 .6rem;
+      }
+
+      &.pagination-next,
+      &.pagination-previous {
+        position: relative;
+
+        a::before,
+        &.disabled::before,
+        a::after,
+        &.disabled::after {
+          margin: 0;
+        }
+
+        &.disabled::before,
+        &.disabled::after {
+          position: absolute;
+          top: .4rem;
+        }
+
+        &.disabled::before {
+          left: .6rem;
+        }
+
+        &.disabled::after {
+          right: .6rem;
+        }
+
+        & > span, a {
+          width: 3rem;
+          height: 3rem;
+          padding: .6rem 0;
+        }
+      }
+    }
+  }
+}

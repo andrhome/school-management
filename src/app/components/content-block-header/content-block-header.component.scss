@@ -1,0 +1,40 @@
+@import "variables";
+@import "mixin";
+
+.content-block-header {
+  @include flex-box(row, space-between, center);
+  border-bottom: 1px solid $border-color-2;
+  padding: 1.6rem 2rem;
+
+  &__title {
+    font-size: 1.6rem;
+    line-height: 1.75;
+    font-weight: $normal;
+  }
+
+  &__filters {
+    @include flex-box(row, flex-start, center);
+    flex-wrap: wrap;
+    flex-grow: 1;
+
+    > * {
+      margin-right: 4%;
+    }
+    .subjects-filter,
+    .teachers-filter {
+      min-width: 19rem;
+      max-width: 19rem;
+      margin-bottom: 0;
+    }
+  }
+
+  &__nav {
+    @include flex-box(row, space-between, center);
+    font-size: 1.3rem;
+    color: $text-color-3;
+
+    > * {
+      margin-left: 2rem;
+    }
+  }
+}

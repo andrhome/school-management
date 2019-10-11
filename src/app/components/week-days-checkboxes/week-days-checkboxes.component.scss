@@ -1,0 +1,51 @@
+@import "src/scss/variables";
+@import "src/scss/mixin";
+
+.week-days-checkboxes {
+  @include flex-box(row, flex-start, center);
+  flex-wrap: wrap;
+
+  ::ng-deep {
+    .mat-checkbox {
+      margin-right: 1.5rem;
+      &:last-child {
+        margin-right: 0;
+      }
+
+      .mat-checkbox-inner-container {
+        width: 30px;
+        height: 30px;
+        margin-right: 0;
+      }
+
+      .mat-checkbox-layout {
+        position: relative;
+
+        .mat-checkbox-frame {
+          border-radius: 50%;
+        }
+      }
+
+      .mat-checkbox-label {
+        @include translate-to-center;
+        position: absolute;
+      }
+
+      &.mat-checkbox-checked {
+        &.mat-accent {
+          .mat-checkbox-label {
+            color: $white-color;
+          }
+
+          .mat-checkbox-background {
+            border-radius: 50%;
+          }
+        }
+      }
+
+      .mat-checkbox-checkmark {
+        display: none;
+      }
+    }
+  }
+}

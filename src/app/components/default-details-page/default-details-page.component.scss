@@ -1,0 +1,14 @@
+@import "mixin";
+
+:host {
+  height: 100%;
+}
+
+.card {
+  height: 100%;
+
+  .buttons-holder {
+    @include flex-box(row, flex-end, center);
+    margin: 0;
+  }
+}

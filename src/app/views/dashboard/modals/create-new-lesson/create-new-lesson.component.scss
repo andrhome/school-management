@@ -1,0 +1,15 @@
+@import "src/scss/variables";
+
+.create-lesson-modal {
+  max-width: 64rem;
+
+  .row {
+    margin: 0;
+  }
+}
+
+.modal-panel {
+  &__body {
+    padding: 0;
+  }
+}

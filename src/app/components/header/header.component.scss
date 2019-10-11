@@ -1,0 +1,31 @@
+@import "variables";
+@import "mixin";
+@import "extends";
+
+.header {
+  @include flex-box(row, space-between, center);
+  @extend .app-container;
+  height: $header-height;
+
+  .logo {
+    a {
+      display: inline-block;
+      font-size: 1.8rem;
+      font-weight: $semi-bold;
+      letter-spacing: 2.8px;
+      color: $text-color;
+      padding: 2.2rem 2rem 2rem .5rem;
+      &:hover {
+        color: $gray;
+      }
+      @include media-max-screen($tablet-2) {
+        padding: 2.2rem 1.5rem 2rem 1.5rem;
+      }
+    }
+  }
+
+  &__content {
+    @include flex-box(row, space-between, center);
+    height: 100%;
+  }
+}

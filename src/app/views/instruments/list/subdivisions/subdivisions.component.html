@@ -1,0 +1,24 @@
+<div class="full-height-block container">
+  <h3 class="list-title">Подразделения</h3>
+  <mts-list-nav [title]="'подразделений'"
+                [btnText]="'подразделение'"
+                [link]="'/instruments/add/' + unitItemType.SUBDIVISION"
+                [itemsAmount]="queryParams.total"
+                [perPage]="queryParams.perPage"
+                (searchHandler)="searchSubdivisionsHandler($event)"
+                (paginationHandler)="changePage($event)"></mts-list-nav>
+  <div class="content-wrap">
+    <mts-default-items-list [itemsList]="subdivisions"
+                            [pageName]="unitItemType.SUBDIVISION"
+                            [paginationParams]="queryParams"
+                            [detailsInModal]="true"
+                            (showDetails)="showSubdivisionDetails($event)"
+                            (deleteItem)="deleteSubdivision($event)"></mts-default-items-list>
+
+    <div class="no-items-message" *ngIf="!isLoading && !subdivisions.length">Подразделения не найдены!</div>
+    <div class="loading-spinner" *ngIf="isLoading">
+      <mat-spinner></mat-spinner>
+      <div class="loading-spinner-overlay"></div>
+    </div>
+  </div>
+</div>

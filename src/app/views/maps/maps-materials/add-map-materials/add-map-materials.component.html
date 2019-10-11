@@ -1,0 +1,133 @@
+<div class="add-map-materials add-form-holder container">
+  <mts-add-form-nav [title]="'К списку карт материалов'" [link]="'/maps/' + pluralItemsType.MAPS_MATERIALS"></mts-add-form-nav>
+  <div class="card">
+    <div class="card-heading">
+      <h4 class="card-title">{{ updateMode ? 'Редактировать' : 'Добавить'}} карту материалов</h4>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="mapForm" class="add-form">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6">
+              <label class="form-group">
+                <span class="form-label">Название <small class="require-flag">*</small></span>
+                <mat-form-field floatLabel="always" appearance="outline">
+                  <input formControlName="name" matInput type="text">
+                </mat-form-field>
+                <span class="invalid-message">Это поле обязательное</span>
+              </label>
+
+              <!--<span class="form-group">-->
+                <!--<label class="form-check">-->
+                  <!--<input type="checkbox" class="form-check-input">-->
+                  <!--<span class="form-label">Навыки</span>-->
+                <!--</label>-->
+              <!--</span>-->
+            </div>
+            <div class="col-md-6">
+              <label class="form-group">
+                <span class="form-label">Возрастная категория <small class="require-flag">*</small></span>
+                <mat-form-field floatLabel="always" appearance="outline">
+                  <mat-select
+                    disableOptionCentering="true"
+                    panelClass="drop-list"
+                    formControlName="ageCategory">
+                    <mat-option *ngFor="let category of ageCategories" [value]="category.id">{{ category.name }}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <span class="invalid-message">Это поле обязательное</span>
+              </label>
+            </div>
+          </div>
+          <div class="add-zone">
+            <div class="add-zone__fields" *ngIf="mapForm.get('zones')['controls'].length">
+              <h4 class="subtitle">Добавление зон</h4>
+              <div formArrayName="zones">
+                <div *ngFor="let zone of mapForm.get('zones')['controls']; let i = index">
+                  <div class="zone-row" [formGroupName]="i">
+                    <div class="row">
+                      <div class="col-md-8">
+                        <label class="form-group">
+                          <span class="form-label">Название зоны <small class="require-flag">*</small></span>
+                          <mat-form-field floatLabel="always" appearance="outline">
+                            <input formControlName="name" matInput type="text">
+                          </mat-form-field>
+                          <span class="invalid-message">Это поле обязательное</span>
+                        </label>
+                      </div>
+                      <div class="buttons-set col-md-4">
+                        <button type="button"
+                                mat-stroked-button
+                                class="btn"
+                                (click)="addSubject(zone)">Добавить предмет</button>
+                        <button type="button"
+                                class="crude-btn btn btn-danger btn-sm"
+                                (click)="removeZone(i)"
+                                title="Удалить зону">
+                          <svg-icon src="assets/images/svg/icons/rubbish-bin.svg" [svgStyle]="{'width.rem': 1.6, 'height.rem': 1.6, 'fill': '#ffffff'}"></svg-icon>
+                        </button>
+                      </div>
+
+                      <div class="subjects-holder" formArrayName="subjects">
+                        <div *ngFor="let subject of zone.get('subjects')['controls']; let j = index">
+                          <div class="row" [formGroupName]="j">
+                            <div class="col-md-5">
+                              <label class="form-group">
+                                <span class="form-label">Предмет</span>
+                                <mat-form-field floatLabel="always" appearance="outline">
+                                  <mat-select disableOptionCentering="true"
+                                              panelClass="drop-list"
+                                              formControlName="subject">
+                                    <mat-option *ngFor="let item of subjectsArray" [value]="item.id">{{ item.name }}</mat-option>
+                                  </mat-select>
+                                </mat-form-field>
+                              </label>
+                            </div>
+                            <div class="col-md-5" *ngIf="subject.get('subject').value">
+                              <label class="form-group">
+                                <span class="form-label">Материалы (напишите материалы через запятую)</span>
+                                <mat-form-field floatLabel="always" appearance="outline">
+                                  <textarea matInput formControlName="materials"></textarea>
+                                </mat-form-field>
+                              </label>
+                            </div>
+                            <div class="remove-btn-holder col-md-2">
+                              <button mat-button
+                                      class="remove-btn-icon btn-icon"
+                                      title="Удалить предмет с материалами"
+                                      (click)="removeSubject(zone, j)">
+                                <svg-icon src="assets/images/svg/icons/close-icon.svg" [svgStyle]="{'width.%': 100, 'height.%': 100, 'fill': 'currentColor'}"></svg-icon>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button mat-stroked-button
+                    color="primary"
+                    type="button"
+                    (click)="addZone()">Добавить зону</button>
+          </div>
+
+          <div class="buttons-holder">
+            <button mat-flat-button
+                    color="primary"
+                    type="button"
+                    [disabled]="mapForm.invalid"
+                    (click)="submit()">
+              {{ updateMode ? 'Сохранить' : 'Добавить'}}
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="loading-spinner" *ngIf="isLoading">
+      <mat-spinner></mat-spinner>
+      <div class="loading-spinner-overlay"></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,237 @@
+.btn {
+  font-size: 1.4rem;
+  padding: .75rem 1.5rem;
+
+  &.btn-sm {
+    padding: .5rem 1.2rem;
+  }
+
+  &.btn-with-icon {
+    @include flex-box(row, center, center);
+    min-width: 4.2rem;
+    min-height: 3.6rem;
+    position: relative;
+
+    .mat-button-wrapper {
+      position: absolute;
+      top: -2px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      width: 2.3rem;
+    }
+  }
+
+  .list-icon {
+    margin-bottom: 3px;
+  }
+
+  .btn-icon {
+    margin-right: .7rem;
+
+    &.del-btn-icon {
+      &:hover {
+        color: $danger-color;
+      }
+    }
+  }
+
+  &-primary {
+    background: $primary-color;
+  }
+
+  &-light {
+    border-color: $light-color;
+    background: $light-color;
+
+    &:hover {
+      background: $light-hover-color;
+    }
+  }
+}
+
+.crude-btn {
+  &.btn {
+    @include flex-box(row, center, center);
+    min-width: 4.2rem;
+    min-height: 3.6rem;
+  }
+
+  &.btn-primary{
+    border-color: $primary-color;
+  }
+}
+
+.sort-btn {
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  padding: 5px;
+  color: $text-color-3;
+  background: transparent;
+  cursor: pointer;
+  border-radius: $small-radius;
+}
+
+.dropdown-btn {
+  @include flex-box(row, flex-start, center);
+  &::after {
+    content: '';
+    width: .8rem;
+    height: .8rem;
+    border: 1px solid;
+    border-color: transparent $border-color $border-color transparent;
+    margin: 0 0 5px 1.2rem;
+    transform: rotate(45deg);
+  }
+}
+
+button.mat-flat-button,
+a.mat-flat-button {
+  &.mat-primary {
+    color: $white-color;
+
+    &[disabled] {
+      color: $white-color;
+      background-color: $primary-color;
+      opacity: .5;
+    }
+    &:not([disabled]):hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}
+
+
+
+button.mat-stroked-button,
+a.mat-stroked-button {
+  &[color="primary"] {
+    border-color: $primary-color;
+
+    &[disabled] {
+      color: $primary-color;
+    }
+
+    &:hover {
+      border-color: $primary-hover-color;
+    }
+  }
+
+  &[disabled] {
+    opacity: .5;
+  }
+
+  &:hover {
+    color: $primary-hover-color;
+
+    .mat-button-focus-overlay {
+      opacity: 0;
+    }
+  }
+}
+
+.btn-small {
+  &.mat-button,
+  &.mat-flat-button,
+  &.mat-stroked-button {
+    padding: 0 .8rem;
+    font-size: 1.3rem;
+  }
+
+  &.mat-button,
+  &.mat-flat-button {
+    line-height: 2.8rem;
+  }
+
+  &.mat-stroked-button {
+    line-height: 2.6rem;
+  }
+}
+
+.btn-round.mat-stroked-button {
+  width: 2.4rem;
+  height: 2.4rem;
+  min-width: 2.4rem;
+  padding: 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.2rem;
+  line-height: 1;
+  color: $label-color;
+
+  &:hover,
+  &:active {
+    color: $primary-color;
+  }
+}
+
+.mat-button {
+  &.btn-icon {
+    width: 2rem;
+    height: 2rem;
+    min-width: 2rem;
+    padding: 0;
+    line-height: 0;
+    color: $label-color;
+
+    &:hover,
+    &:active {
+      color: $primary-color;
+    }
+
+    &--s {
+      width: 1.6rem;
+      height: 1.6rem;
+      min-width: 1.6rem;
+    }
+    &--xs {
+      width: 1.2rem;
+      height: 1.2rem;
+      min-width: 1.2rem;
+    }
+
+    &[disabled] {
+      opacity: .5;
+
+      &:hover,
+      &:active {
+        color: $label-color;
+      }
+    }
+
+    &.cdk-program-focused {
+      .mat-button-focus-overlay {
+        opacity: 0;
+      }
+    }
+
+    &.remove-btn-icon {
+      color: $danger-color;
+    }
+
+    &.del-btn-icon {
+      &:hover {
+        color: $danger-color;
+      }
+    }
+  }
+
+  &.btn-link {
+    min-width: 5rem;
+    padding: .4rem .8rem;
+    line-height: initial;
+    font-size: inherit;
+    font-weight: 400;
+
+    &:hover,
+    &:focus {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+}
+
+.remove-btn-holder {
+  @include flex-box(row, flex-start, center);
+}
