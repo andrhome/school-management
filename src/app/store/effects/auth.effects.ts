@@ -25,7 +25,7 @@ export class AuthEffects {
           return new actions.LoginSuccess();
         }),
         catchError(error => {
-          this.toastr.error(error.message, `Ошибка авторизации!`);
+          this.toastr.error(error.message, `Authorization error!`);
           return of(new actions.LoginFailed(error));
         })
       );
@@ -41,7 +41,7 @@ export class AuthEffects {
           return new actions.GetMeSuccess(me);
         }),
         catchError(error => {
-          this.toastr.error(error.message, `Не удалось получить данные пользователя!`);
+          this.toastr.error(error.message, `Failed to get user data!`);
           return of(new actions.GetMeFailed(error));
         })
       );
