@@ -1,14 +1,14 @@
 <div class="kis">
-  <mts-content-block-header
+  <sch-content-block-header
     [showTeachersFilter]="true"
     [customTitle]="'Индивидуальные собеседования'"
     [showAddAction]="true"
     [hideLegend]="true"
     (addNewAction)="createUpdateInterview()"
-  ></mts-content-block-header>
+  ></sch-content-block-header>
 
   <div class="posts-list-container ps" [perfectScrollbar]="{}">
-    <mts-post *ngFor="let interview of interviews"
+    <sch-post *ngFor="let interview of interviews"
               [post]="interview"
               [postType]="postType"
               [currentUser]="currentUser"
@@ -27,7 +27,7 @@
           <li>Участники со стороны семьи: {{ interview.schoolSideParticipants }}</li>
         </ul>
       </ng-container>
-    </mts-post>
+    </sch-post>
     <div class="no-items-message" *ngIf="!isLoading && !interviews.length">Индивидуальные собеседования не найдены!</div>
   </div>
 

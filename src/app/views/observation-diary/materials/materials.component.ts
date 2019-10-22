@@ -6,7 +6,7 @@ import { Subject } from 'rxjs';
 import { ObservationType } from '@app/types/common.enums';
 
 @Component({
-  selector: 'mts-materials',
+  selector: 'sch-materials',
   templateUrl: './materials.component.html',
   styleUrls: ['./materials.component.scss']
 })

@@ -7,7 +7,7 @@ import * as subjectsReducers from '@store/reducers/subjects.reducer';
 import * as subjectsActions from '@store/actions/subjects.actions';
 
 @Component({
-  selector: 'mts-subjects-list',
+  selector: 'sch-subjects-list',
   templateUrl: './subjects-list.component.html'
 })
 export class SubjectsListComponent implements OnInit, OnDestroy {

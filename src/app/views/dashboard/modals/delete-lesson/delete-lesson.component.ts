@@ -10,7 +10,7 @@ import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 
 @Component({
-  selector: 'mts-delete-lesson',
+  selector: 'sch-delete-lesson',
   templateUrl: './delete-lesson.component.html',
   styleUrls: ['./delete-lesson.component.scss']
 })

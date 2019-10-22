@@ -11,11 +11,11 @@
 <!--        <p *ngIf="item.fromAge !== undefined" class="card-text">От {{ item.fromAge }} до {{ item.toAge }} лет</p>-->
 <!--        <p *ngIf="item.active !== undefined" class="card-text">Активность: {{ item.active === true ? 'Активен' : 'Неактивен' }}</p>-->
         <p *ngIf="item.firstName !== undefined" class="card-text">{{ item.firstName }} {{ item.lastName }}</p>
-        <mts-list-buttons-set [pageName]="pageName"
+        <sch-list-buttons-set [pageName]="pageName"
                               [detailsInModal]="detailsInModal"
                               (showDetails)="showDetailsModal($event)"
                               (deleteItem)="delete($event)"
-                              [item]="item"></mts-list-buttons-set>
+                              [item]="item"></sch-list-buttons-set>
       </div>
     </div>
   </div>

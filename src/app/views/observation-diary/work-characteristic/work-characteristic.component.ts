@@ -9,7 +9,7 @@ import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 
 @Component({
-  selector: 'mts-work-characteristic',
+  selector: 'sch-work-characteristic',
   templateUrl: './work-characteristic.component.html',
   styleUrls: ['./work-characteristic.component.scss']
 })

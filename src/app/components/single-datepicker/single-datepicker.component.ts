@@ -15,7 +15,7 @@ export const MY_FORMATS = {
 };
 
 @Component({
-  selector: 'mts-single-datepicker',
+  selector: 'sch-single-datepicker',
   templateUrl: './single-datepicker.component.html',
   styleUrls: ['./single-datepicker.component.scss'],
   providers: [

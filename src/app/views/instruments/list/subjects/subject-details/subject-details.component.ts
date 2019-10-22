@@ -3,7 +3,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { SubjectType } from '@app/types/common.types';
 
 @Component({
-  selector: 'mts-subject-details',
+  selector: 'sch-subject-details',
   templateUrl: './subject-details.component.html',
   styleUrls: ['./subject-details.component.scss']
 })

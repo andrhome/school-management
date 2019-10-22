@@ -4,7 +4,7 @@ import { UnitItemType } from '@app/types/common.enums';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
 @Component({
-  selector: 'mts-school-details',
+  selector: 'sch-school-details',
   templateUrl: './school-details.component.html',
   styleUrls: ['./school-details.component.scss']
 })

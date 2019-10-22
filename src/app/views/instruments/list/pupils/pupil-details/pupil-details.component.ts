@@ -10,7 +10,7 @@ import { PupilType } from '@app/types/common.types';
 import { PluralItemsType, UnitItemType } from '@app/types/common.enums';
 
 @Component({
-  selector: 'mts-pupil-details',
+  selector: 'sch-pupil-details',
   templateUrl: './pupil-details.component.html',
   styleUrls: ['./pupil-details.component.scss']
 })

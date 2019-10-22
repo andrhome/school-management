@@ -12,7 +12,7 @@ import { UnitItemType } from '@app/types/common.enums';
 import { SchoolDetailsComponent } from '@views/instruments/list/schools/school-details/school-details.component';
 
 @Component({
-  selector: 'mts-schools',
+  selector: 'sch-schools',
   templateUrl: './schools.component.html',
   styleUrls: ['./schools.component.scss']
 })

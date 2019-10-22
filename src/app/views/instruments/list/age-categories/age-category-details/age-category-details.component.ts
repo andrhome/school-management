@@ -4,7 +4,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { AgeCategoryType } from '@app/types/common.types';
 
 @Component({
-  selector: 'mts-age-category-details',
+  selector: 'sch-age-category-details',
   templateUrl: './age-category-details.component.html',
   styleUrls: ['./age-category-details.component.scss']
 })

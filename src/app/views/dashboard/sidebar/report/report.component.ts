@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'mts-report',
+  selector: 'sch-report',
   templateUrl: './report.component.html',
   styleUrls: ['./report.component.scss']
 })

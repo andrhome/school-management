@@ -4,7 +4,7 @@ import { MatDialog } from '@angular/material';
 import { CommentsParentType } from '@app/types/common.enums';
 
 @Component({
-  selector: 'mts-comments-list',
+  selector: 'sch-comments-list',
   templateUrl: './comments-list.component.html',
   styleUrls: ['./comments-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'mts-files',
+  selector: 'sch-files',
   templateUrl: './files.component.html',
   styleUrls: ['./files.component.scss']
 })

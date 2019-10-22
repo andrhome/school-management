@@ -1,9 +1,9 @@
 <header class="header">
-  <div class="logo" title="Санкт-Петербургская Монтессори-школа Михайловой">
-    <a [routerLink]="'/dashboard'">МШМ</a>
+  <div class="logo" title="School Management">
+    <a [routerLink]="'/dashboard'">SCH</a>
   </div>
   <div class="header__content" *ngIf="isAuthorizedUser">
-    <mts-header-nav></mts-header-nav>
-    <mts-user-block></mts-user-block>
+    <sch-header-nav></sch-header-nav>
+    <sch-user-block></sch-user-block>
   </div>
 </header>

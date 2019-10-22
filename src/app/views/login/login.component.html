@@ -1,6 +1,6 @@
 <div class="login">
   <div class="container">
-    <h1 class="login__title text-center">Добро пожаловать!</h1>
+    <h1 class="login__title text-center">Sign In</h1>
     <div class="login__form-holder">
       <div class="login__img">
         <img src="/assets/images/no-photo.png" alt="No photo">
@@ -11,19 +11,19 @@
           <input type="email"
                  class="form-control"
                  formControlName="email">
-          <span class="invalid-message">Поле Email обязательное и должно быть валидным</span>
+          <span class="invalid-message">Email field is required and must be valid</span>
         </label>
         <label class="form-group">
-          <span class="form-label">Пароль <small class="require-flag">*</small></span>
+          <span class="form-label">Password <small class="require-flag">*</small></span>
           <input type="password"
                  class="form-control"
                  formControlName="password">
-          <span class="invalid-message">Это поле обязательное</span>
+          <span class="invalid-message">This field is required</span>
         </label>
         <button type="submit"
                 class="btn btn-primary"
                 [disabled]="loginForm.invalid"
-                (click)="submit()">Войти</button>
+                (click)="submit()">Sing In</button>
       </form>
     </div>
   </div>

@@ -12,7 +12,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "mts",
+      "prefix": "sch",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",

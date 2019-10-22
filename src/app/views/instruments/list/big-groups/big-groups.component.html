@@ -1,19 +1,19 @@
 <div class="full-height-block container">
   <h3 class="list-title">Большие группы</h3>
-  <mts-list-nav [title]="'больших групп'"
+  <sch-list-nav [title]="'больших групп'"
                 [btnText]="'большую группу'"
                 [link]="'/instruments/add/' + unitItemType.BIG_GROUP"
                 [itemsAmount]="queryParams.total"
                 [perPage]="queryParams.perPage"
                 (searchHandler)="searchGroupsHandler($event)"
-                (paginationHandler)="changePage($event)"></mts-list-nav>
+                (paginationHandler)="changePage($event)"></sch-list-nav>
   <div class="content-wrap">
-    <mts-default-items-list [itemsList]="groups"
+    <sch-default-items-list [itemsList]="groups"
                             [pageName]="unitItemType.BIG_GROUP"
                             [paginationParams]="queryParams"
                             [detailsInModal]="true"
                             (showDetails)="showGroupDetails($event)"
-                            (deleteItem)="deleteGroup($event)">></mts-default-items-list>
+                            (deleteItem)="deleteGroup($event)">></sch-default-items-list>
 
     <div class="no-items-message" *ngIf="!isLoading && !groups.length">Большие группы не найдены!</div>
     <div class="loading-spinner" *ngIf="isLoading">

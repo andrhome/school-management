@@ -15,7 +15,7 @@ import * as actionsSubjects from '@store/actions/subjects.actions';
 import { PluralItemsType } from '@app/types/common.enums';
 
 @Component({
-  selector: 'mts-add-map-materials',
+  selector: 'sch-add-map-materials',
   templateUrl: './add-map-materials.component.html',
   styleUrls: ['./add-map-materials.component.scss']
 })

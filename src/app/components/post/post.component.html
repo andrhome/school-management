@@ -9,7 +9,7 @@
     <ng-content select=".simple-text"></ng-content>
   </div>
   <div class="note__info">
-    <mts-user-row *ngIf="post.createdBy" [user]="post.createdBy"></mts-user-row>
+    <sch-user-row *ngIf="post.createdBy" [user]="post.createdBy"></sch-user-row>
     <h5 *ngIf="post.subject" class="color-blue ml-3">{{ post.subject.name }}</h5>
   </div>
   <div *ngIf="visibleComments" class="p-3">
@@ -28,14 +28,14 @@
         <button mat-button class="btn-small" (click)="visibleComments = !visibleComments">Cкрыть комментарии</button>
       </div>
     </ng-template>
-    <mts-comments-list
+    <sch-comments-list
       *ngIf="post.comments.length"
       class="mb-2"
       [parentType]="postType"
       [comments]="post.comments"
       [currentUser]="currentUser"
       (deleteComment)="deleteComment($event)"
-    ></mts-comments-list>
+    ></sch-comments-list>
   </div>
   <div class="control-block">
     <ng-container *ngIf="canEdit">

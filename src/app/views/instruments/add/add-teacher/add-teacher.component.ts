@@ -20,7 +20,7 @@ import { ToastrService } from 'ngx-toastr';
 import { PluralItemsType, RolesTypes } from '@app/types/common.enums';
 
 @Component({
-  selector: 'mts-add-teacher',
+  selector: 'sch-add-teacher',
   templateUrl: './add-teacher.component.html',
   styleUrls: ['./add-teacher.component.scss']
 })

@@ -4,7 +4,7 @@ import { HelperService } from '@services/helper/helper.service';
 import { UnitItemType } from '@app/types/common.enums';
 
 @Component({
-  selector: 'mts-person-details-page',
+  selector: 'sch-person-details-page',
   templateUrl: './person-details-page.component.html',
   styleUrls: ['./person-details-page.component.scss']
 })

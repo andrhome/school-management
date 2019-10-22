@@ -13,7 +13,7 @@ import { UnitItemType } from '@app/types/common.enums';
 
 
 @Component({
-  selector: 'mts-subjects',
+  selector: 'sch-subjects',
   templateUrl: './subjects.component.html',
   styleUrls: ['./subjects.component.scss']
 })

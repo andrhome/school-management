@@ -11,7 +11,7 @@ import { UserType } from '@app/types/common.types';
 import { RolesTypes, UnitItemType } from '@app/types/common.enums';
 
 @Component({
-  selector: 'mts-teachers',
+  selector: 'sch-teachers',
   templateUrl: './teachers.component.html',
   styleUrls: ['./teachers.component.scss']
 })

@@ -1,5 +1,5 @@
 <div>
-  <mts-content-block-header></mts-content-block-header>
+  <sch-content-block-header></sch-content-block-header>
   <div class="progress-block">
     <h2 class="progress-block__title">Распределение по зонам</h2>
     <div class="clearfix">
@@ -20,21 +20,21 @@
   </div>
   <div class="inner-block">
     <div class="inner-block__navigation">
-      <mts-subjects-list></mts-subjects-list>
+      <sch-subjects-list></sch-subjects-list>
     </div>
     <div class="inner-block__content d-flex">
       <div class="mr-3">
-        <mts-handling-list class="flex-grow-1"></mts-handling-list>
+        <sch-handling-list class="flex-grow-1"></sch-handling-list>
         <div class="handling-grouped">
           <div class="handling-grouped__checkbox multiline">
             <mat-checkbox>Только активные материалы</mat-checkbox>
           </div>
           <div class="handling-grouped__list">
-            <mts-handling-list-grouped></mts-handling-list-grouped>
+            <sch-handling-list-grouped></sch-handling-list-grouped>
           </div>
         </div>
       </div>
-      <mts-pupils-nav *ngIf="groupView"></mts-pupils-nav>
+      <sch-pupils-nav *ngIf="groupView"></sch-pupils-nav>
     </div>
   </div>
 </div>

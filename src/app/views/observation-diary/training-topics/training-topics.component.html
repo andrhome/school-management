@@ -1,8 +1,8 @@
 <div>
-  <mts-content-block-header [showSubjectName]="true"></mts-content-block-header>
+  <sch-content-block-header [showSubjectName]="true"></sch-content-block-header>
   <div class="inner-block">
     <div class="inner-block__navigation">
-      <mts-subjects-list></mts-subjects-list>
+      <sch-subjects-list></sch-subjects-list>
     </div>
     <div class="inner-block__content d-flex">
       <div class="mw-430 mr-3">
@@ -69,7 +69,7 @@
           </mat-expansion-panel>
         </mat-accordion>
       </div>
-      <mts-pupils-nav *ngIf="groupView"></mts-pupils-nav>
+      <sch-pupils-nav *ngIf="groupView"></sch-pupils-nav>
     </div>
   </div>
 </div>

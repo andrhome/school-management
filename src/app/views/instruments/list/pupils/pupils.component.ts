@@ -11,7 +11,7 @@ import { PupilType } from '@app/types/common.types';
 import { UnitItemType } from '@app/types/common.enums';
 
 @Component({
-  selector: 'mts-pupils',
+  selector: 'sch-pupils',
   templateUrl: './pupils.component.html',
   styleUrls: ['./pupils.component.scss']
 })

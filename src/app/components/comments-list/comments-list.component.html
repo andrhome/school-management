@@ -1,8 +1,8 @@
 <div class="comments-list">
-  <mts-comment-item
+  <sch-comment-item
     class="comment" *ngFor="let comment of comments"
     [comment]="comment"
     [parentType]="parentType"
     [currentUser]="currentUser"
-    (deleteComment)="delComment($event)"></mts-comment-item>
+    (deleteComment)="delComment($event)"></sch-comment-item>
 </div>

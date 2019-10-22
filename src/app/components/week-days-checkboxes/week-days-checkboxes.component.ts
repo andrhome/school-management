@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output
 import { LessonType } from '@app/types/common.types';
 
 @Component({
-  selector: 'mts-week-days-checkboxes',
+  selector: 'sch-week-days-checkboxes',
   templateUrl: './week-days-checkboxes.component.html',
   styleUrls: ['./week-days-checkboxes.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

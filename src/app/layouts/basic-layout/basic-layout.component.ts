@@ -7,7 +7,7 @@ import { Actions, ofType } from '@ngrx/effects';
 import { Subject } from 'rxjs';
 
 @Component({
-  selector: 'mts-basic',
+  selector: 'sch-basic',
   templateUrl: './basic-layout.component.html',
   styleUrls: ['./basic-layout.component.scss']
 })

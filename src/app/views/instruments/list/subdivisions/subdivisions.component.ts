@@ -12,7 +12,7 @@ import { SubdivisionDetailsComponent } from '@views/instruments/list/subdivision
 import { UnitItemType } from '@app/types/common.enums';
 
 @Component({
-  selector: 'mts-subdivisions',
+  selector: 'sch-subdivisions',
   templateUrl: './subdivisions.component.html',
   styleUrls: ['./subdivisions.component.scss']
 })

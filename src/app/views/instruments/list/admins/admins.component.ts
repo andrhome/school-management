@@ -12,7 +12,7 @@ import { RolesTypes, UnitItemType } from '@app/types/common.enums';
 import { AdminDetailsComponent } from '@views/instruments/list/admins/admin-details/admin-details.component';
 
 @Component({
-  selector: 'mts-admins',
+  selector: 'sch-admins',
   templateUrl: './admins.component.html',
   styleUrls: ['./admins.component.scss']
 })

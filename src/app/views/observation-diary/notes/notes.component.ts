@@ -17,7 +17,7 @@ import { CommentsParentType, NotesType } from '@app/types/common.enums';
 import * as authReducers from '@store/reducers/auth.reducer';
 
 @Component({
-  selector: 'mts-notes',
+  selector: 'sch-notes',
   templateUrl: './notes.component.html',
   styleUrls: ['./notes.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

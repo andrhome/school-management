@@ -20,7 +20,7 @@ import { Actions, ofType } from '@ngrx/effects';
 import { EditLessonsSetComponent } from '@views/dashboard/modals/edit-lessons-set/edit-lessons-set.component';
 
 @Component({
-  selector: 'mts-create-new-lesson',
+  selector: 'sch-create-new-lesson',
   templateUrl: './create-new-lesson.component.html',
   styleUrls: ['./create-new-lesson.component.scss'],
   providers: [

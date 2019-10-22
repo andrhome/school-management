@@ -5,7 +5,7 @@ import {CommentsService} from '@services/comments/comments.service';
 import { CommentsParentType, RolesTypes } from '@app/types/common.enums';
 
 @Component({
-  selector: 'mts-post',
+  selector: 'sch-post',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

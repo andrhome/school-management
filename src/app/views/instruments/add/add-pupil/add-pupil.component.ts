@@ -20,7 +20,7 @@ import { HelperService } from '@services/helper/helper.service';
 import { PluralItemsType, RolesTypes } from '@app/types/common.enums';
 
 @Component({
-  selector: 'mts-add-pupil',
+  selector: 'sch-add-pupil',
   templateUrl: './add-pupil.component.html',
   styleUrls: ['./add-pupil.component.scss']
 })

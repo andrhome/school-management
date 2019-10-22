@@ -4,7 +4,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { GroupType } from '@app/types/common.types';
 
 @Component({
-  selector: 'mts-big-group-details',
+  selector: 'sch-big-group-details',
   templateUrl: './big-group-details.component.html',
   styleUrls: ['./big-group-details.component.scss']
 })

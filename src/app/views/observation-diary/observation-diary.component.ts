@@ -16,7 +16,7 @@ import { UserType } from '@app/types/common.types';
 import * as authReducers from '@store/reducers/auth.reducer';
 
 @Component({
-  selector: 'mts-observation-diary',
+  selector: 'sch-observation-diary',
   templateUrl: './observation-diary.component.html',
   styleUrls: ['./observation-diary.component.scss']
 })

@@ -6,7 +6,7 @@ import { MatDialog } from '@angular/material';
 import { EditCommentComponent } from '@views/observation-diary/modals/edit-comment/edit-comment.component';
 
 @Component({
-  selector: 'mts-comment-item',
+  selector: 'sch-comment-item',
   templateUrl: './comment-item.component.html',
   styleUrls: ['./comment-item.component.scss']
 })

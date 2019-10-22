@@ -4,7 +4,7 @@ import { HelperService } from '@services/helper/helper.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'mts-edit-lessons-set',
+  selector: 'sch-edit-lessons-set',
   templateUrl: './edit-lessons-set.component.html',
   styleUrls: ['./edit-lessons-set.component.scss']
 })

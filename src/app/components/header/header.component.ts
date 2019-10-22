@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { AuthService } from '@services/auth/auth.service';
 
 @Component({
-  selector: 'mts-header',
+  selector: 'sch-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })

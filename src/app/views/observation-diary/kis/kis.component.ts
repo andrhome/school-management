@@ -15,7 +15,7 @@ import * as usersReducers from '@store/reducers/users.reducer';
 import * as pupilsReducers from '@store/reducers/pupils.reducer';
 
 @Component({
-  selector: 'mts-kis',
+  selector: 'sch-kis',
   templateUrl: './kis.component.html',
   styleUrls: ['./kis.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

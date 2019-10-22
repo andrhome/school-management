@@ -12,7 +12,7 @@ import * as teachersActions from '@store/actions/users.actions';
 import { NotesType, RolesTypes } from '@app/types/common.enums';
 
 @Component({
-  selector: 'mts-content-block-header',
+  selector: 'sch-content-block-header',
   templateUrl: './content-block-header.component.html',
   styleUrls: ['./content-block-header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

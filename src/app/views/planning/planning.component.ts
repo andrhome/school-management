@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'mts-planning',
+  selector: 'sch-planning',
   templateUrl: './planning.component.html',
   styleUrls: ['./planning.component.scss']
 })

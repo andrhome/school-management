@@ -1,19 +1,19 @@
 <div class="full-height-block container">
   <h3 class="list-title">Возрастные категории</h3>
-  <mts-list-nav [title]="'возрастных категорий'"
+  <sch-list-nav [title]="'возрастных категорий'"
                 [btnText]="'возрастную категорию'"
                 [link]="'/instruments/add/' + unitItemType.AGE_CATEGORY"
                 [itemsAmount]="queryParams.total"
                 [perPage]="queryParams.perPage"
                 (searchHandler)="searchCategoriesHandler($event)"
-                (paginationHandler)="changePage($event)"></mts-list-nav>
+                (paginationHandler)="changePage($event)"></sch-list-nav>
   <div class="content-wrap">
-    <mts-default-items-list [itemsList]="ageCategories"
+    <sch-default-items-list [itemsList]="ageCategories"
                             [pageName]="unitItemType.AGE_CATEGORY"
                             [paginationParams]="queryParams"
                             [detailsInModal]="true"
                             (showDetails)="showCategoryDetails($event)"
-                            (deleteItem)="deleteCategory($event)"></mts-default-items-list>
+                            (deleteItem)="deleteCategory($event)"></sch-default-items-list>
 
     <div class="no-items-message" *ngIf="!isLoading && !ageCategories.length">Возрастные категории не найдены!</div>
     <div class="loading-spinner" *ngIf="isLoading">

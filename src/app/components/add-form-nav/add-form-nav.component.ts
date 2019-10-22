@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'mts-add-form-nav',
+  selector: 'sch-add-form-nav',
   templateUrl: './add-form-nav.component.html',
   styleUrls: ['./add-form-nav.component.scss']
 })

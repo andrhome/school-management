@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'mts-list-buttons-set',
+  selector: 'sch-list-buttons-set',
   templateUrl: './list-buttons-set.component.html',
   styleUrls: ['./list-buttons-set.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

@@ -11,7 +11,7 @@ import { AgeCategoryType } from '@app/types/common.types';
 import { PluralItemsType } from '@app/types/common.enums';
 
 @Component({
-  selector: 'mts-add-age-category',
+  selector: 'sch-add-age-category',
   templateUrl: './add-age-category.component.html',
   styleUrls: ['./add-age-category.component.scss']
 })

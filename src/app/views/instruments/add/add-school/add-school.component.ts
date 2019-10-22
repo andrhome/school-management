@@ -12,7 +12,7 @@ import { SchoolType } from '@app/types/common.types';
 import { PluralItemsType } from '@app/types/common.enums';
 
 @Component({
-  selector: 'mts-add-school',
+  selector: 'sch-add-school',
   templateUrl: './add-school.component.html',
   styleUrls: ['./add-school.component.scss']
 })

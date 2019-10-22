@@ -13,7 +13,7 @@ import { AgeCategoryDetailsComponent } from '@views/instruments/list/age-categor
 import { UnitItemType } from '@app/types/common.enums';
 
 @Component({
-  selector: 'mts-age-categories',
+  selector: 'sch-age-categories',
   templateUrl: './age-categories.component.html',
   styleUrls: ['./age-categories.component.scss']
 })

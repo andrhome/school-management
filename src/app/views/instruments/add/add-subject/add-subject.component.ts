@@ -13,7 +13,7 @@ import { takeUntil } from 'rxjs/operators';
 import { PluralItemsType } from '@app/types/common.enums';
 
 @Component({
-  selector: 'mts-add-subject',
+  selector: 'sch-add-subject',
   templateUrl: './add-subject.component.html',
   styleUrls: ['./add-subject.component.scss']
 })

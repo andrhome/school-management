@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'mts-maps',
+  selector: 'sch-maps',
   templateUrl: './maps.component.html',
   styleUrls: ['./maps.component.scss']
 })

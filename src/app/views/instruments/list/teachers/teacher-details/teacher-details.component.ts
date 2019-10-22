@@ -10,7 +10,7 @@ import { takeUntil } from 'rxjs/operators';
 import * as actions from '@store/actions/users.actions';
 
 @Component({
-  selector: 'mts-teacher-details',
+  selector: 'sch-teacher-details',
   templateUrl: './teacher-details.component.html',
   styleUrls: ['./teacher-details.component.scss']
 })

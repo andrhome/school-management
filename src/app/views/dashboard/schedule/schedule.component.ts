@@ -47,7 +47,7 @@ const colors: any = {
 };
 
 @Component({
-  selector: 'mts-schedule',
+  selector: 'sch-schedule',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './schedule.component.html',
   styleUrls: ['./schedule.component.scss'],
