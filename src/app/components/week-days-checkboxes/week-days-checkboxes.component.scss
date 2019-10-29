@@ -1,5 +1,5 @@
-@import "src/scss/variables";
-@import "src/scss/mixin";
+@import "../../../scss/variables";
+@import "../../../scss/mixin";
 
 .week-days-checkboxes {
   @include flex-box(row, flex-start, center);

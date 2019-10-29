@@ -3,7 +3,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { SubdivisionType } from '@app/types/common.types';
 
 @Component({
-  selector: 'sch-subdivision-details',
+  selector: 'app-subdivision-details',
   templateUrl: './subdivision-details.component.html',
   styleUrls: ['./subdivision-details.component.scss']
 })

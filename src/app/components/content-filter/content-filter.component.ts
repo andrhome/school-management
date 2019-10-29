@@ -6,7 +6,7 @@ import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 
 @Component({
-  selector: 'sch-content-filter',
+  selector: 'app-content-filter',
   templateUrl: './content-filter.component.html',
   styleUrls: ['./content-filter.component.scss']
 })

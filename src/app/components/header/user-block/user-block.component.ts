@@ -7,7 +7,7 @@ import { Subject } from 'rxjs';
 import { UserType } from '@app/types/common.types';
 
 @Component({
-  selector: 'sch-user-block',
+  selector: 'app-user-block',
   templateUrl: './user-block.component.html',
   styleUrls: ['./user-block.component.scss']
 })

@@ -13,7 +13,7 @@ import { MatDialog, MatTreeNestedDataSource } from '@angular/material';
 import { NestedTreeControl } from '@angular/cdk/tree';
 
 @Component({
-  selector: 'sch-map-materials-details',
+  selector: 'app-map-materials-details',
   templateUrl: './map-materials-details.component.html',
   styleUrls: ['./map-materials-details.component.scss']
 })

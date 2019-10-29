@@ -9,7 +9,7 @@ import { DeleteLessonComponent } from '@views/dashboard/modals/delete-lesson/del
 import { LessonsStatusType } from '@app/types/common.enums';
 
 @Component({
-  selector: 'sch-edit-lesson',
+  selector: 'app-edit-lesson',
   templateUrl: './edit-lesson.component.html',
   styleUrls: ['./edit-lesson.component.scss'],
   providers: [

@@ -1,19 +1,19 @@
 <div class="full-height-block container">
   <h3 class="list-title">Подразделения</h3>
-  <sch-list-nav [title]="'подразделений'"
+  <app-list-nav [title]="'подразделений'"
                 [btnText]="'подразделение'"
                 [link]="'/instruments/add/' + unitItemType.SUBDIVISION"
                 [itemsAmount]="queryParams.total"
                 [perPage]="queryParams.perPage"
                 (searchHandler)="searchSubdivisionsHandler($event)"
-                (paginationHandler)="changePage($event)"></sch-list-nav>
+                (paginationHandler)="changePage($event)"></app-list-nav>
   <div class="content-wrap">
-    <sch-default-items-list [itemsList]="subdivisions"
+    <app-default-items-list [itemsList]="subdivisions"
                             [pageName]="unitItemType.SUBDIVISION"
                             [paginationParams]="queryParams"
                             [detailsInModal]="true"
                             (showDetails)="showSubdivisionDetails($event)"
-                            (deleteItem)="deleteSubdivision($event)"></sch-default-items-list>
+                            (deleteItem)="deleteSubdivision($event)"></app-default-items-list>
 
     <div class="no-items-message" *ngIf="!isLoading && !subdivisions.length">Подразделения не найдены!</div>
     <div class="loading-spinner" *ngIf="isLoading">

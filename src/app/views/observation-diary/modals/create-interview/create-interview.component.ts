@@ -12,7 +12,7 @@ import * as pupilsReducers from '@store/reducers/pupils.reducer';
 import { HelperService } from '@services/helper/helper.service';
 
 @Component({
-  selector: 'sch-create-interview',
+  selector: 'app-create-interview',
   templateUrl: './create-interview.component.html',
   styleUrls: ['./create-interview.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

@@ -9,7 +9,7 @@ import { takeUntil } from 'rxjs/operators';
 import { PluralItemsType, UnitItemType } from '@app/types/common.enums';
 
 @Component({
-  selector: 'sch-maps-materials',
+  selector: 'app-maps-materials',
   templateUrl: './maps-materials.component.html',
   styleUrls: ['./maps-materials.component.scss']
 })

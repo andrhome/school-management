@@ -9,7 +9,7 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 @Component({
-  selector: 'sch-topic',
+  selector: 'app-topic',
   templateUrl: './topic.component.html',
   styleUrls: ['./topic.component.scss']
 })

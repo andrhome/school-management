@@ -10,7 +10,7 @@ import { Subject } from 'rxjs';
 import { HelperService } from '@services/helper/helper.service';
 
 @Component({
-  selector: 'sch-login',
+  selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })

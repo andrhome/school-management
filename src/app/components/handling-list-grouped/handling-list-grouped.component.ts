@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'sch-handling-list-grouped',
+  selector: 'app-handling-list-grouped',
   templateUrl: './handling-list-grouped.component.html',
   styleUrls: ['./handling-list-grouped.component.scss']
 })

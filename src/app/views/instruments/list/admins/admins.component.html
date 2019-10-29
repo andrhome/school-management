@@ -1,19 +1,19 @@
 <div class="full-height-block container">
   <h3 class="list-title">Администраторы</h3>
-  <sch-list-nav [title]="'администраторов'"
+  <app-list-nav [title]="'администраторов'"
                 [btnText]="'администратора'"
                 [link]="'/instruments/add/' + unitItemType.ADMIN"
                 [itemsAmount]="queryParams.total"
                 [perPage]="queryParams.perPage"
                 (searchHandler)="searchAdminsHandler($event)"
-                (paginationHandler)="changePage($event)"></sch-list-nav>
+                (paginationHandler)="changePage($event)"></app-list-nav>
   <div class="content-wrap">
-    <sch-default-items-list [itemsList]="adminsList"
+    <app-default-items-list [itemsList]="adminsList"
                             [pageName]="unitItemType.ADMIN"
                             [paginationParams]="queryParams"
                             [detailsInModal]="true"
                             (showDetails)="showAdminDetails($event)"
-                            (deleteItem)="deleteAdmin($event)"></sch-default-items-list>
+                            (deleteItem)="deleteAdmin($event)"></app-default-items-list>
 
     <div class="no-items-message" *ngIf="!isLoading && !adminsList.length">Администраторы не найдены!</div>
     <div class="loading-spinner" *ngIf="isLoading">

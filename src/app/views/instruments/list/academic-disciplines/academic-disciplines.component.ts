@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'sch-academic-disciplines',
+  selector: 'app-academic-disciplines',
   templateUrl: './academic-disciplines.component.html',
   styleUrls: ['./academic-disciplines.component.scss']
 })

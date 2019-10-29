@@ -11,12 +11,12 @@
       <div class="card">
         <div class="card-body">
           <div class="buttons-holder">
-            <a mat-stroked-button class="btn btn-with-icon"
+            <button mat-stroked-button class="btn btn-with-icon"
                [routerLink]="'/instruments/add/school'"
                [queryParams]="{id: data.id}"
                (click)="onClose()">
               <svg-icon src="assets/images/svg/icons/edit-icon.svg" [svgStyle]="{'width.%': 90, 'height.%': 90, 'fill': 'currentColor'}"></svg-icon>
-            </a>
+            </button>
           </div>
           <div class="info-holder">
             <div class="info">

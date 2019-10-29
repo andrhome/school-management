@@ -18,7 +18,7 @@ export const MY_FORMATS = {
 };
 
 @Component({
-  selector: 'sch-data-calendar',
+  selector: 'app-data-calendar',
   templateUrl: './data-calendar.component.html',
   styleUrls: ['./data-calendar.component.scss'],
   providers: [

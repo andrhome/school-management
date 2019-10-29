@@ -20,7 +20,7 @@ import { MapMaterialsType } from '@app/types/common.types';
 import { PluralItemsType } from '@app/types/common.enums';
 
 @Component({
-  selector: 'sch-add-big-group',
+  selector: 'app-add-big-group',
   templateUrl: './add-big-group.component.html',
   styleUrls: ['./add-big-group.component.scss']
 })

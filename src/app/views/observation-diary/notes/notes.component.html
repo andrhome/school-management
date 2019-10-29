@@ -1,15 +1,15 @@
 <div class="notes">
-  <sch-content-block-header
+  <app-content-block-header
     [hideTitle]="true"
     [showSubjectsFilter]="true"
     [showTeachersFilter]="true"
     [showNotesTypeFilter]="true"
     (typeFilterChange)="typeFilterChange($event)"
-  ></sch-content-block-header>
+  ></app-content-block-header>
 
   <div class="posts-list-container ps" [perfectScrollbar]="{}">
     <button mat-flat-button color="primary" (click)="createUpdateNote()" class="mb-4">create test note</button>
-    <sch-post *ngFor="let note of notes"
+    <app-post *ngFor="let note of notes"
               [post]="note"
               [postType]="postType"
               [currentUser]="currentUser"
@@ -29,7 +29,7 @@
         </div>
       </ng-container>
       <ng-container class="simple-text">{{ note.text }}</ng-container>
-    </sch-post>
+    </app-post>
     <div class="no-items-message" *ngIf="!isLoading && !notes.length">Заметки не найдены!</div>
   </div>
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'sch-handling-list',
+  selector: 'app-handling-list',
   templateUrl: './handling-list.component.html',
   styleUrls: ['./handling-list.component.scss']
 })

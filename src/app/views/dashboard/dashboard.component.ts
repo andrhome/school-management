@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import * as ageCategoriesReducers from '@store/reducers/age-category.reducer';
 
 @Component({
-  selector: 'sch-dashboard',
+  selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })

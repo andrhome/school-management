@@ -15,7 +15,7 @@ export const MY_FORMATS = {
 };
 
 @Component({
-  selector: 'sch-single-datepicker',
+  selector: 'app-single-datepicker',
   templateUrl: './single-datepicker.component.html',
   styleUrls: ['./single-datepicker.component.scss'],
   providers: [

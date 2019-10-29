@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HelperService } from '@services/helper/helper.service';
 
 @Component({
-  selector: 'sch-ui-kit',
+  selector: 'app-ui-kit',
   templateUrl: './ui-kit.component.html',
   styleUrls: ['./ui-kit.component.scss']
 })

@@ -1,5 +1,5 @@
 <div class="add-form-holder container">
-  <sch-add-form-nav [title]="'К списку учеников'" [link]="'/instruments/list/' + pluralItemsType.PUPILS"></sch-add-form-nav>
+  <app-add-form-nav [title]="'К списку учеников'" [link]="'/instruments/list/' + pluralItemsType.PUPILS"></app-add-form-nav>
   <div class="card">
     <div class="card-heading">
       <h4 class="card-title">{{updateMode ? 'Редактировать ученика' : 'Добавить ученика'}}</h4>
@@ -57,12 +57,12 @@
                 <span class="form-label">Дата рождения <small class="require-flag">*</small></span>
                 <div *ngIf="updateMode; else dobDefaultDatepicker" class="datepicker-wrap">
                   <div *ngIf="currentPupil.id">
-                    <sch-single-datepicker (selectDate)="onDateChange($event, 'dob')"
-                                           [initialDate]="currentPupil.dob"></sch-single-datepicker>
+                    <app-single-datepicker (selectDate)="onDateChange($event, 'dob')"
+                                           [initialDate]="currentPupil.dob"></app-single-datepicker>
                   </div>
                 </div>
                 <ng-template #dobDefaultDatepicker>
-                  <sch-single-datepicker (selectDate)="onDateChange($event, 'dob')"></sch-single-datepicker>
+                  <app-single-datepicker (selectDate)="onDateChange($event, 'dob')"></app-single-datepicker>
                 </ng-template>
               </div>
             </div>
@@ -71,12 +71,12 @@
                 <span class="form-label">Дата вступления в МШМ <small class="require-flag">*</small></span>
                 <div *ngIf="updateMode; else enrollmentDefaultDatepicker" class="datepicker-wrap">
                   <div *ngIf="currentPupil.id">
-                    <sch-single-datepicker (selectDate)="onDateChange($event, 'enrollmentDate')"
-                                           [initialDate]="currentPupil.enrollmentDate"></sch-single-datepicker>
+                    <app-single-datepicker (selectDate)="onDateChange($event, 'enrollmentDate')"
+                                           [initialDate]="currentPupil.enrollmentDate"></app-single-datepicker>
                   </div>
                 </div>
                 <ng-template #enrollmentDefaultDatepicker>
-                  <sch-single-datepicker (selectDate)="onDateChange($event, 'enrollmentDate')"></sch-single-datepicker>
+                  <app-single-datepicker (selectDate)="onDateChange($event, 'enrollmentDate')"></app-single-datepicker>
                 </ng-template>
               </div>
             </div>

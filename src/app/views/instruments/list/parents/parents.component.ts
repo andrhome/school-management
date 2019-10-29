@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'sch-parents',
+  selector: 'app-parents',
   templateUrl: './parents.component.html',
   styleUrls: ['./parents.component.scss']
 })

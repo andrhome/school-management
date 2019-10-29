@@ -9,7 +9,7 @@ import * as pupilsReducers from '@store/reducers/pupils.reducer';
 import { takeUntil } from 'rxjs/operators';
 
 @Component({
-  selector: 'sch-pupils-groups-filter',
+  selector: 'app-pupils-groups-filter',
   templateUrl: './pupils-groups-filter.component.html',
   styleUrls: ['./pupils-groups-filter.component.scss']
 })

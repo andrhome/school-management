@@ -13,7 +13,7 @@ import { Constants } from '@services/constants.service';
 import { PluralItemsType, RolesTypes } from '@app/types/common.enums';
 
 @Component({
-  selector: 'sch-add-admin',
+  selector: 'app-add-admin',
   templateUrl: './add-admin.component.html',
   styleUrls: ['./add-admin.component.scss']
 })

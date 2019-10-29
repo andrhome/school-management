@@ -14,7 +14,7 @@ import { SchoolType, SubdivisionType } from '@app/types/common.types';
 import { PluralItemsType } from '@app/types/common.enums';
 
 @Component({
-  selector: 'sch-add-subdivision',
+  selector: 'app-add-subdivision',
   templateUrl: './add-subdivision.component.html',
   styleUrls: ['./add-subdivision.component.scss']
 })

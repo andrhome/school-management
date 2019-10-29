@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NewLessonDialogData } from '@app/types/common.types';
 
 @Component({
-  selector: 'sch-add-materials',
+  selector: 'app-add-materials',
   templateUrl: './add-materials.component.html',
   styleUrls: ['./add-materials.component.scss']
 })

@@ -1,5 +1,5 @@
-@import "variables";
-@import "extends";
+@import "../../../scss/variables";
+@import "../../../scss/extends";
 
 .content-filter {
   @extend .block-item;

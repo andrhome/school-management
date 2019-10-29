@@ -130,7 +130,7 @@
             </div>
 
             <div class="col-md-6">
-              <sch-user-row [user]="testUser"></sch-user-row>
+              <app-user-row [user]="testUser"></app-user-row>
             </div>
           </div>
         </div>
@@ -191,24 +191,24 @@
         <div class="col-lg-4">
           <div class="form-group">
             <span class="form-label">Дата проведения</span>
-            <sch-single-datepicker
+            <app-single-datepicker
               [initialDate]="testDate"
-              (selectDate)="handleDateStart($event)"></sch-single-datepicker>
+              (selectDate)="handleDateStart($event)"></app-single-datepicker>
           </div>
           <div class="form-group">
             <span class="form-label">Выбрать период:</span>
             <div class="dates-range dates-range--hide-icon dates-range--hide-outline">
-              <sch-single-datepicker [outline]="false" (selectDate)="handleDateStart($event)"></sch-single-datepicker>
+              <app-single-datepicker [outline]="false" (selectDate)="handleDateStart($event)"></app-single-datepicker>
               <span class="dates-range__divider"> - </span>
-              <sch-single-datepicker [outline]="false" (selectDate)="handleDateEnd($event)"></sch-single-datepicker>
+              <app-single-datepicker [outline]="false" (selectDate)="handleDateEnd($event)"></app-single-datepicker>
             </div>
           </div>
           <div class="form-group">
             <span class="form-label">Выбрать период:</span>
             <div class="dates-range">
-              <sch-single-datepicker (selectDate)="handleDateStart($event)"></sch-single-datepicker>
+              <app-single-datepicker (selectDate)="handleDateStart($event)"></app-single-datepicker>
               <span class="dates-range__divider"> - </span>
-              <sch-single-datepicker (selectDate)="handleDateEnd($event)"></sch-single-datepicker>
+              <app-single-datepicker (selectDate)="handleDateEnd($event)"></app-single-datepicker>
             </div>
           </div>
         </div>

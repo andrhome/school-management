@@ -1,14 +1,14 @@
 <div class="full-height-block container">
-  <sch-add-form-nav [title]="'К списку карт материалов'" [link]="'/maps/' + pluralItemsType.MAPS_MATERIALS"></sch-add-form-nav>
+  <app-add-form-nav [title]="'К списку карт материалов'" [link]="'/maps/' + pluralItemsType.MAPS_MATERIALS"></app-add-form-nav>
   <div class="card" *ngIf="currentMapMaterials">
     <div class="card-body">
       <div class="buttons-holder">
-        <a mat-stroked-button class="btn btn-with-icon"
+        <button mat-stroked-button class="btn btn-with-icon"
            [routerLink]="'/maps/maps-materials/add'"
            [queryParams]="{id: currentMapMaterials.id}"
            title="Редактировать карту материалов">
           <svg-icon src="assets/images/svg/icons/edit-icon.svg" [svgStyle]="{'width.%': 90, 'height.%': 90, 'fill': 'currentColor'}"></svg-icon>
-        </a>
+        </button>
         <button type="button"
                 class="crude-btn btn btn-danger btn-sm"
                 (click)="deleteMapMaterials(currentMapMaterials)"

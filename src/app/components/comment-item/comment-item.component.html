@@ -1,6 +1,6 @@
-<sch-user-row *ngIf="comment.createdBy"
+<app-user-row *ngIf="comment.createdBy"
               class="mb-3"
-              [user]="comment.createdBy"></sch-user-row>
+              [user]="comment.createdBy"></app-user-row>
 <p class="comment__text">
   {{ comment.text }}
 </p>

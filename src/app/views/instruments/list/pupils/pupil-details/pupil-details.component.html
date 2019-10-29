@@ -1,6 +1,6 @@
 <div class="full-height-block container" *ngIf="currentPupil">
-  <sch-add-form-nav [title]="'К списку учеников'" [link]="'/instruments/list/' + pluralItemsType.PUPILS"></sch-add-form-nav>
-  <sch-person-details-page [person]="currentPupil" [editUrl]="unitItemType.PUPIL"></sch-person-details-page>
+  <app-add-form-nav [title]="'К списку учеников'" [link]="'/instruments/list/' + pluralItemsType.PUPILS"></app-add-form-nav>
+  <app-person-details-page [person]="currentPupil" [editUrl]="unitItemType.PUPIL"></app-person-details-page>
   <div class="loading-spinner" *ngIf="isLoading">
     <mat-spinner></mat-spinner>
     <div class="loading-spinner-overlay"></div>

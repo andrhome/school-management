@@ -9,7 +9,7 @@ import * as groupsReducers from '@store/reducers/groups.reducer';
 import { ObservationType } from '@app/types/common.enums';
 
 @Component({
-  selector: 'sch-default-person-list',
+  selector: 'app-default-person-list',
   templateUrl: './default-person-list.component.html',
   styleUrls: ['./default-person-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

@@ -6,7 +6,7 @@
         <span *ngIf="notices?.length" class="colored-badge colored-badge--rounded colored-badge--success ml-3"><span class="colored-badge__text">{{ notices?.length }}</span></span>
       </mat-panel-title>
     </mat-expansion-panel-header>
-    <sch-notices-list [notices]="notices" (removeNoticeEvent)="removeNotice($event)"></sch-notices-list>
+    <app-notices-list [notices]="notices" (removeNoticeEvent)="removeNotice($event)"></app-notices-list>
     <div class="loading-spinner loading-spinner--s" *ngIf="isLoading">
       <mat-spinner></mat-spinner>
       <div class="loading-spinner-overlay"></div>

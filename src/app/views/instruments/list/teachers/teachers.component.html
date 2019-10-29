@@ -1,17 +1,17 @@
 <div class="full-height-block container">
   <h3 class="list-title">Учителя</h3>
-  <sch-list-nav [title]="'учителей'"
+  <app-list-nav [title]="'учителей'"
                 [btnText]="'учителя'"
                 [link]="'/instruments/add/' + unitItemType.TEACHER"
                 [itemsAmount]="queryParams.total"
                 [perPage]="queryParams.perPage"
                 (searchHandler)="searchTeachersHandler($event)"
-                (paginationHandler)="changePage($event)"></sch-list-nav>
+                (paginationHandler)="changePage($event)"></app-list-nav>
   <div class="content-wrap">
-    <sch-default-person-list [itemsList]="teachers"
+    <app-default-person-list [itemsList]="teachers"
                              [pageName]="unitItemType.TEACHER"
                              [paginationParams]="queryParams"
-                             (deleteItem)="deleteTeacher($event)"></sch-default-person-list>
+                             (deleteItem)="deleteTeacher($event)"></app-default-person-list>
     <div class="no-items-message" *ngIf="!isLoading && !teachers.length">Учителя не найдены!</div>
     <div class="loading-spinner" *ngIf="isLoading">
       <mat-spinner></mat-spinner>

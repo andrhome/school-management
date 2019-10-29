@@ -1,5 +1,5 @@
-@import "variables";
-@import "mixin";
+@import "../../../scss/variables";
+@import "../../../scss/mixin";
 
 .content-block-header {
   @include flex-box(row, space-between, center);

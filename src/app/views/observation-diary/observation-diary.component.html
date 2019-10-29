@@ -1,14 +1,14 @@
 <div class="main-content">
   <div class="sidebar-holder">
-    <sch-sidebar [groupView]="groupView"></sch-sidebar>
+    <app-sidebar [groupView]="groupView"></app-sidebar>
   </div>
   <div class="content-holder">
-    <sch-content-filter [groupView]="groupView"></sch-content-filter>
+    <app-content-filter [groupView]="groupView"></app-content-filter>
     <div class="content-block">
       <router-outlet></router-outlet>
     </div>
   </div>
   <div class="pt-4">
-    <sch-pupils-nav *ngIf="!groupView"></sch-pupils-nav>
+    <app-pupils-nav *ngIf="!groupView"></app-pupils-nav>
   </div>
 </div>

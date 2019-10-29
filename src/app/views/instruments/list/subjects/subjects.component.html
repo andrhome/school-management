@@ -1,19 +1,19 @@
 <div class="full-height-block container">
   <h3 class="list-title">Предметы</h3>
-  <sch-list-nav [title]="'предметов'"
+  <app-list-nav [title]="'предметов'"
                 [btnText]="'предмет'"
                 [link]="'/instruments/add/' + unitItemType.SUBJECT"
                 [itemsAmount]="queryParams.total"
                 [perPage]="queryParams.perPage"
                 (searchHandler)="searchSubjectsHandler($event)"
-                (paginationHandler)="changePage($event)"></sch-list-nav>
+                (paginationHandler)="changePage($event)"></app-list-nav>
   <div class="content-wrap">
-    <sch-default-items-list [itemsList]="subjects"
+    <app-default-items-list [itemsList]="subjects"
                             [pageName]="unitItemType.SUBJECT"
                             [paginationParams]="queryParams"
                             [detailsInModal]="true"
                             (showDetails)="showSubjectDetails($event)"
-                            (deleteItem)="deleteSubject($event)"></sch-default-items-list>
+                            (deleteItem)="deleteSubject($event)"></app-default-items-list>
 
     <div class="no-items-message" *ngIf="!isLoading && !subjects.length">Предметы не найдены!</div>
     <div class="loading-spinner" *ngIf="isLoading">

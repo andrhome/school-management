@@ -13,7 +13,7 @@ import * as actionsNote from '@store/actions/notes-learner.actions';
 import { NotesType } from '@app/types/common.enums';
 
 @Component({
-  selector: 'sch-create-note',
+  selector: 'app-create-note',
   templateUrl: './create-note.component.html',
   styleUrls: ['./create-note.component.scss']
 })

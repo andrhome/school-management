@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'sch-instruments',
+  selector: 'app-instruments',
   templateUrl: './instruments.component.html',
   styleUrls: ['./instruments.component.scss']
 })

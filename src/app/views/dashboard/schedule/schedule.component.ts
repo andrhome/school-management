@@ -47,7 +47,7 @@ const colors: any = {
 };
 
 @Component({
-  selector: 'sch-schedule',
+  selector: 'app-schedule',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './schedule.component.html',
   styleUrls: ['./schedule.component.scss'],

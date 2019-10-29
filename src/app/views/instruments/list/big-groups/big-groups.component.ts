@@ -12,7 +12,7 @@ import { UnitItemType } from '@app/types/common.enums';
 import { BigGroupDetailsComponent } from '@views/instruments/list/big-groups/big-group-details/big-group-details.component';
 
 @Component({
-  selector: 'sch-big-groups',
+  selector: 'app-big-groups',
   templateUrl: './big-groups.component.html',
   styleUrls: ['./big-groups.component.scss']
 })

@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NewLessonDialogData } from '@app/types/common.types';
 
 @Component({
-  selector: 'sch-rename-lesson',
+  selector: 'app-rename-lesson',
   templateUrl: './rename-lesson.component.html',
   styleUrls: ['./rename-lesson.component.scss']
 })

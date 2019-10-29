@@ -8,7 +8,7 @@ import { Subject } from 'rxjs';
 import * as ageCategoriesReducers from '@store/reducers/age-category.reducer';
 
 @Component({
-  selector: 'sch-pupils-nav',
+  selector: 'app-pupils-nav',
   templateUrl: './pupils-nav.component.html',
   styleUrls: ['./pupils-nav.component.scss']
 })

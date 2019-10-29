@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { UserType } from '@app/types/common.types';
 
 @Component({
-  selector: 'sch-user-row',
+  selector: 'app-user-row',
   templateUrl: './user-row.component.html',
   styleUrls: ['./user-row.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

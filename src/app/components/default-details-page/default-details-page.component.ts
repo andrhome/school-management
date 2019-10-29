@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { UnitItemType } from '@app/types/common.enums';
 
 @Component({
-  selector: 'sch-default-details-page',
+  selector: 'app-default-details-page',
   templateUrl: './default-details-page.component.html',
   styleUrls: ['./default-details-page.component.scss']
 })

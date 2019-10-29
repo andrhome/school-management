@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
 import { CalendarNoticeType } from '@app/types/common.types';
 
 @Component({
-  selector: 'sch-notices-list',
+  selector: 'app-notices-list',
   templateUrl: './notices-list.component.html',
   styleUrls: ['./notices-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

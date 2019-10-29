@@ -10,9 +10,9 @@
       <h1 class="mod-header__title">Редактирование комментария</h1>
     </header>
     <section class="modal-panel__body pb-5 pt-4 container-fluid">
-      <sch-user-row *ngIf="data.commentData.createdBy"
+      <app-user-row *ngIf="data.commentData.createdBy"
                     class="mb-3"
-                    [user]="data.commentData.createdBy"></sch-user-row>
+                    [user]="data.commentData.createdBy"></app-user-row>
       <label class="form-group">
         <mat-form-field floatLabel="always" appearance="outline">
           <textarea formControlName="text" matInput placeholder="Текст комментария"></textarea>

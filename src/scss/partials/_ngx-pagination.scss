@@ -1,3 +1,6 @@
+@import "../variables";
+@import "../mixin";
+
 .pagination-holder {
   min-height: 4.6rem;
   border-top: 1px solid $border-color-2;

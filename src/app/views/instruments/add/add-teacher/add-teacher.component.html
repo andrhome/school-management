@@ -1,5 +1,5 @@
 <div class="add-form-holder container">
-  <sch-add-form-nav [title]="'К списку учитилей'" [link]="'/instruments/list/' + pluralItemsType.TEACHERS"></sch-add-form-nav>
+  <app-add-form-nav [title]="'К списку учитилей'" [link]="'/instruments/list/' + pluralItemsType.TEACHERS"></app-add-form-nav>
   <div class="card">
     <div class="card-heading">
       <h4 class="card-title">{{updateMode ? 'Редактировать учителя' : 'Добавить учителя'}}</h4>
@@ -72,13 +72,13 @@
 <!--            <div class="col-md-6">-->
 <!--              <div class="form-group">-->
 <!--                <span class="form-label">Дата рождения <small class="require-flag">*</small></span>-->
-<!--                <sch-single-datepicker formControlName="dateOfBirth"></sch-single-datepicker>-->
+<!--                <app-single-datepicker formControlName="dateOfBirth"></app-single-datepicker>-->
 <!--              </div>-->
 <!--            </div>-->
 <!--            <div class="col-md-6">-->
 <!--              <div class="form-group">-->
 <!--                <span class="form-label">Дата вступления в МШМ <small class="require-flag">*</small></span>-->
-<!--                <sch-single-datepicker formControlName="dateMsh"></sch-single-datepicker>-->
+<!--                <app-single-datepicker formControlName="dateMsh"></app-single-datepicker>-->
 <!--              </div>-->
 <!--            </div>-->
 <!--          </div>-->

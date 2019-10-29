@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs';
 import { ObservationType } from '@app/types/common.enums';
 
 @Component({
-  selector: 'sch-header-nav',
+  selector: 'app-header-nav',
   templateUrl: './header-nav.component.html',
   styleUrls: ['./header-nav.component.scss']
 })

@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'sch-default-items-list',
+  selector: 'app-default-items-list',
   templateUrl: './default-items-list.component.html',
   styleUrls: ['./default-items-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

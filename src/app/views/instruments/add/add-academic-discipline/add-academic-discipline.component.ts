@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PluralItemsType } from '@app/types/common.enums';
 
 @Component({
-  selector: 'sch-add-academic-discipline',
+  selector: 'app-add-academic-discipline',
   templateUrl: './add-academic-discipline.component.html',
   styleUrls: ['./add-academic-discipline.component.scss']
 })

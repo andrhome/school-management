@@ -4,7 +4,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { CommentsService } from '@services/comments/comments.service';
 
 @Component({
-  selector: 'sch-edit-comment',
+  selector: 'app-edit-comment',
   templateUrl: './edit-comment.component.html',
   styleUrls: ['./edit-comment.component.scss']
 })

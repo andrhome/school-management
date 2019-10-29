@@ -3,7 +3,7 @@ import { Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 @Component({
-  selector: 'sch-list-nav',
+  selector: 'app-list-nav',
   templateUrl: './list-nav.component.html',
   styleUrls: ['./list-nav.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

@@ -1,4 +1,4 @@
-@import "src/scss/mixin";
+@import "../../../scss/mixin";
 
 .pupils-buttons {
   @include flex-box(row, space-between, center);
